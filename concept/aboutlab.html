@@ -68,6 +68,20 @@
 
 /* Removed old chalkboard styles */
 
+/* 배경 GIF 스타일 */
+.background-gif {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    object-fit: cover;
+}
+
 .main-chalkboard-title {
     font-family: 'Open Sans', sans-serif; /* Modern, thin, powerful sans-serif font */
     color: #3A4E8A; /* Deep cyber blue */
@@ -785,11 +799,16 @@
         height: 180px;
     }
     
-    /* モバイルで常に「詳細を見る」を表示 */
+    /* モバイルでオーバーレイを非表示 */
     .image-overlay {
-        opacity: 1;
-        background: rgba(46, 58, 135, 0.45);
+        opacity: 0;
         pointer-events: none;
+    }
+    
+    /* モバイルでホバー時のみ表示 (タッチ時) */
+    .report-card:active .image-overlay {
+        opacity: 1;
+        background: rgba(46, 58, 135, 0.85);
     }
     
     .overlay-content i {
@@ -957,7 +976,7 @@
 	<header id="fh5co-header" class="fh5co-cover">
 		<div id="particles-js" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;"></div>
 		<div class="overlay"></div>
-		<img src="videos/aboutlab.gif" alt="Background Animation" class="background-gif" id="bgvid" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+		<img src="videos/aboutlab.gif" alt="Background Animation" class="background-gif" id="bgvid">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-7 text-left">
