@@ -72,6 +72,32 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+	
+	<!-- 타이핑 텍스트 즉시 초기화 (페이지 로드 즉시 실행) -->
+	<script>
+		// 페이지 로드 즉시 실행 - DOMContentLoaded를 기다리지 않음
+		(function() {
+			// 타이핑 텍스트 초기화 함수
+			function clearTypingTexts() {
+				var typingTexts = document.querySelectorAll('.typing-text');
+				typingTexts.forEach(function(el) {
+					el.textContent = '';
+					el.innerHTML = '';
+				});
+				console.log('🔄 Typing texts cleared');
+			}
+			
+			// 즉시 실행
+			if (document.readyState === 'loading') {
+				document.addEventListener('DOMContentLoaded', clearTypingTexts);
+			} else {
+				clearTypingTexts();
+			}
+			
+			// 추가 안전장치: 100ms 후 다시 한번 실행
+			setTimeout(clearTypingTexts, 100);
+		})();
+	</script>
 
 	</head>
 	<body>
@@ -736,10 +762,7 @@
 				return;
 			}
 			
-			// 처음 방문임을 표시 (다른 페이지로 이동하기 전에 설정)
-			sessionStorage.setItem('hasVisited', 'true');
-			
-			// 로딩 화면 표시
+			// 로딩 화면 표시 (hasVisited는 나중에 설정)
 			loadingScreen.classList.add('show');
 			
 			const loadingBar = document.getElementById('loadingBar');
@@ -813,6 +836,12 @@
 							// DOM에서 완전히 제거
 							setTimeout(function() {
 								loadingScreen.remove();
+								
+								// 로딩 완료 후 방문 기록 저장
+								sessionStorage.setItem('hasVisited', 'true');
+								
+								// 로딩 화면 완전히 제거 후 타이핑 시작 이벤트 발생
+								window.dispatchEvent(new Event('loadingComplete'));
 							}, 800);
 						}, 500);
 					}, 300);

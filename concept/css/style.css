@@ -4956,6 +4956,15 @@ video::-webkit-media-controls-start-playback-button {
 
 .typing-text {
   display: inline;
+  /* 초기 상태: 비어있음을 보장 */
+  min-height: 0;
+}
+
+/* 타이핑 텍스트가 비어있을 때 공간 차지하지 않도록 */
+.typing-text:empty {
+  display: inline;
+  width: 0;
+  min-width: 0;
 }
 
 .cursor {

@@ -262,9 +262,34 @@
 	var typewriterEffect = function() {
 		// 로딩 화면이 있는 경우 완료될 때까지 대기
 		var loadingScreen = document.getElementById('loading-screen');
-		var shouldWaitForLoading = loadingScreen && !sessionStorage.getItem('hasVisited');
+		var hasVisited = sessionStorage.getItem('hasVisited');
+		
+		console.log('🔍 typewriterEffect called');
+		console.log('  - loadingScreen exists:', !!loadingScreen);
+		console.log('  - hasVisited:', hasVisited);
+		console.log('  - shouldWaitForLoading:', !!(loadingScreen && !hasVisited));
+		
+		var shouldWaitForLoading = loadingScreen && !hasVisited;
+		
+		// 로딩 화면이 있으면 아예 함수를 여기서 종료하고 이벤트만 등록
+		if (shouldWaitForLoading) {
+			console.log('🛑 Loading screen detected - STOPPING HERE and waiting for event');
+			window.addEventListener('loadingComplete', function() {
+				console.log('📢 loadingComplete event received - calling typewriterEffect again');
+				typewriterEffect(); // 로딩 완료 후 다시 실행
+			}, { once: true }); // once: true로 한 번만 실행되도록
+			return; // 여기서 함수 종료
+		}
+		
+		console.log('✅ No loading screen or already visited - proceeding with typewriter');
 		
 		var titleElement = document.querySelector('#main-title');
+		
+		// 즉시 모든 타이핑 텍스트 초기화
+		var allTypingTexts = document.querySelectorAll('.typing-text');
+		allTypingTexts.forEach(function(el) {
+			el.textContent = '';
+		});
 		
 		// ページURLに基づいてデフォルトテキストを決定
 		var currentPage = window.location.pathname.split('/').pop();
@@ -398,15 +423,17 @@
 			}
 		}
 
-		// ページ ロード 後 少し の 遅延 後 アニメーション 開始
-		// 로딩 화면이 있으면 완전히 사라진 후에 타이핑 시작 (3.8초 = 2.5초 로딩 + 0.8초 페이드아웃 + 0.5초 여유)
-		// 로딩 화면이 없으면 바로 시작 (500ms)
-		var delay = shouldWaitForLoading ? 3800 : 500;
+		// 로딩 화면이 없는 경우 즉시 시작
+		console.log('✅ No loading screen, starting typewriter immediately');
 		setTimeout(function() {
 			// 一度 すべて の カーソル を 確実 に 隠す
 			initializeCursors();
+			// 타이핑 시작 전 텍스트 다시 한번 초기化
+			allTypingTexts.forEach(function(el) {
+				el.textContent = '';
+			});
 			typeWriter();
-		}, delay);
+		}, 50); // 500ms → 50ms로 단축
 	};
 
 	// マウス追従効果
@@ -448,7 +475,7 @@
 			}
 
 			// パーティクル生成（確率的に）
-			if (Math.random() < 0.3) {
+			if (Math.random() < 0.3) { // 30% 확률
 				createParticle(mouseX, mouseY);
 			}
 		});
@@ -464,7 +491,7 @@
 			// パーティクルを配列に追加
 			particles.push(particle);
 
-			// 3秒後にパーティクルを削除
+			// 1초 후에 パーティクルを削除 (3초 → 1초로 단축)
 			setTimeout(function() {
 				if (particle.parentNode) {
 					particle.parentNode.removeChild(particle);
@@ -473,7 +500,7 @@
 				if (index > -1) {
 					particles.splice(index, 1);
 				}
-			}, 3000);
+			}, 1000); // 3000ms → 1000ms
 		}
 
 		// マウスがヘッダーから離れた時の処理
