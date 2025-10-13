@@ -260,6 +260,10 @@
 
 	// タイピングアニメーション効果
 	var typewriterEffect = function() {
+		// 로딩 화면이 있는 경우 완료될 때까지 대기
+		var loadingScreen = document.getElementById('loading-screen');
+		var shouldWaitForLoading = loadingScreen && !sessionStorage.getItem('hasVisited');
+		
 		var titleElement = document.querySelector('#main-title');
 		
 		// ページURLに基づいてデフォルトテキストを決定
@@ -395,11 +399,14 @@
 		}
 
 		// ページ ロード 後 少し の 遅延 後 アニメーション 開始
+		// 로딩 화면이 있으면 완전히 사라진 후에 타이핑 시작 (3.8초 = 2.5초 로딩 + 0.8초 페이드아웃 + 0.5초 여유)
+		// 로딩 화면이 없으면 바로 시작 (500ms)
+		var delay = shouldWaitForLoading ? 3800 : 500;
 		setTimeout(function() {
 			// 一度 すべて の カーソル を 確実 に 隠す
 			initializeCursors();
 			typeWriter();
-		}, 500);
+		}, delay);
 	};
 
 	// マウス追従効果
