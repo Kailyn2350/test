@@ -556,8 +556,12 @@ h1, h2, h3, h4, h5, h6, figure {
   overflow: hidden; /* 동영상이 넘치지 않도록 */
 }
 
-/* 동영상 배경 스타일 */
-#background-video {
+/* GIF/이미지 배경 스타일 (비디오를 GIF로 교체) */
+.background-gif,
+#background-video,
+#research-background-video,
+#header-background-video,
+#bgvid {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -568,31 +572,9 @@ h1, h2, h3, h4, h5, h6, figure {
   z-index: -1;
   transform: translate(-50%, -50%);
   object-fit: cover;
-  background: url(../images/back.png) center center / cover no-repeat; /* 비디오 로딩 전 배경 */
-  /* 모바일에서 컨트롤 숨기기 */
   pointer-events: none;
-}
-
-/* 모바일에서 비디오 컨트롤 완전히 숨기기 */
-#background-video::-webkit-media-controls {
-  display: none !important;
-}
-#background-video::-webkit-media-controls-enclosure {
-  display: none !important;
-}
-
-/* 동영상을 지원하지 않는 브라우저용 폴백 이미지 */
-#background-video img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: cover;
-  z-index: -1;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .fh5co-cover .overlay {
@@ -2475,18 +2457,7 @@ canvas#achievement-donut-chart {
   overflow: hidden;
 }
 
-#research-background-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -1;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-}
+/* #research-background-video 스타일은 위의 .background-gif로 통합됨 */
 
 .video-background .overlay {
   z-index: 0;

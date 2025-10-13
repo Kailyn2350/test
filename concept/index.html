@@ -151,10 +151,7 @@
 	</nav>
 
 	<header id="fh5co-header" class="fh5co-cover" data-stellar-background-ratio="0.5">
-		<video autoplay muted loop playsinline id="background-video">
-			<source src="videos/back1.mp4" type="video/mp4">
-			<img src="images/back.png" alt="Background">
-		</video>
+		<img src="videos/back1.gif" alt="Background Animation" class="background-gif" id="background-video">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -295,10 +292,7 @@
 
 	<!-- ===== 研究業績 ===== -->
 	<div id="fh5co-counter">
-		<video autoplay muted loop playsinline id="research-background-video">
-			<source src="videos/back1.mp4" type="video/mp4">
-			<img src="images/back.png" alt="Background">
-		</video>
+		<img src="videos/back1.gif" alt="Background Animation" class="background-gif" id="research-background-video">
 		<div class="overlay"></div>
 		<!-- 固定ヘッダー -->
 		<div class="research-header">
@@ -350,10 +344,7 @@
 								<div class="card-content-section">
 									<p class="card-description">深層生成モデルを用いて、意味情報を直接やり取りする次世代通信方式を探究。データ圧縮の限界を超え、知識共有による革新的な通信を実現します。</p>
 									<div class="topic-video-wrapper">
-										<video autoplay loop muted playsinline class="topic-video-enhanced">
-											<source src="images/semantic.mp4" type="video/mp4">
-											<img src="images/semantic.png" alt="セマンティック通信 概要図" class="topic-image-enhanced">
-										</video>
+											<img src="images/semantic.gif" alt="セマンティック通信 概要図" class="topic-video-enhanced topic-image-enhanced">
 										<div class="image-overlay-gradient"></div>
 									</div>
 								</div>
@@ -382,10 +373,7 @@
 								<div class="card-content-section">
 									<p class="card-description">鍵生成や人工フェージングにより、暗号に依存しない安全な無線リンクを実現。物理的特性を活用した究極のセキュリティを追求します。</p>
 									<div class="topic-video-wrapper">
-										<video autoplay loop muted playsinline class="topic-video-enhanced">
-											<source src="images/PLS.mp4" type="video/mp4">
-											<img src="images/PLS.png" alt="物理層セキュリティ 概要図" class="topic-image-enhanced">
-										</video>
+										<img src="images/PLS.gif" alt="物理層セキュリティ 概要図" class="topic-video-enhanced topic-image-enhanced">
 										<div class="image-overlay-gradient"></div>
 									</div>
 								</div>
@@ -414,10 +402,7 @@
 								<div class="card-content-section">
 									<p class="card-description">自由空間光を用いた大容量・低遅延リンクのチャネル推定と補償手法を研究。大気乱流の影響を克服し、次世代の無線バックホールを実現します。</p>
 									<div class="topic-video-wrapper">
-										<video autoplay loop muted playsinline class="topic-video-enhanced">
-											<source src="images/FSO.mp4" type="video/mp4">
-											<img src="images/FSO.png" alt="光無線通信 概要図" class="topic-image-enhanced">
-										</video>
+										<img src="images/FSO.gif" alt="光無線通信 概要図" class="topic-video-enhanced topic-image-enhanced">
 										<div class="image-overlay-gradient"></div>
 									</div>
 								</div>
@@ -869,33 +854,7 @@
 		})();
 	</script>
 
-	<!-- Background Video Error Handling -->
-	<script>
-		(function() {
-			const video = document.getElementById('background-video');
-			if (video) {
-				// 비디오 로딩 에러 처리
-				video.addEventListener('error', function(e) {
-					console.log('Video loading failed, using fallback image');
-					// 비디오를 숨기고 CSS 배경 이미지가 보이도록
-					video.style.display = 'none';
-				}, true);
-				
-				// 비디오 로딩 실패 시 타임아웃
-				setTimeout(function() {
-					if (video.readyState === 0 || video.error) {
-						console.log('Video loading timeout, using fallback image');
-						video.style.display = 'none';
-					}
-				}, 3000);
-				
-				// 비디오 로드 성공 시
-				video.addEventListener('loadeddata', function() {
-					console.log('Video loaded successfully');
-				});
-			}
-		})();
-	</script>
+	<!-- GIF Background - No JavaScript needed! -->
 
 	</body>
 </html>
