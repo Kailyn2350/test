@@ -1,0 +1,135 @@
+/* Styles for horizontal display of research topics on research.html */
+
+/* 배경색을 흰색으로 설정 */
+.research-scroll-section {
+  background: #ffffff !important;
+  padding: 60px 0 !important;
+}
+
+.research-scroll-container {
+    display: block !important;
+    height: auto !important;
+    max-height: unset !important;
+    padding: 40px 0 !important;
+    margin: 0 auto !important;
+    max-width: 1400px !important;
+}
+
+.research-topics-panel {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+  height: auto !important;
+  scroll-snap-type: none !important;
+  padding: 20px 0px !important;
+  width: 100% !important;
+  gap: 30px !important; /* 카드 사이 간격 추가 */
+}
+
+.research-topic-item {
+  flex: 1 !important;
+  min-width: 360px !important;
+  max-width: 420px !important;
+  margin: 0 !important; /* 네거티브 마진 제거 */
+  height: auto !important;
+  min-height: unset !important;
+  scroll-snap-align: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+  padding: 0 15px !important; /* 내부 패딩 추가 */
+}
+
+/* Ensure active state doesn't re-introduce opacity/transform */
+.research-topic-item.active {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.topic-card-modern {
+  height: 100% !important; /* Force card to take full height of item */
+  display: flex !important; /* Make card a flex container */
+  flex-direction: column !important; /* Stack content vertically */
+  justify-content: space-between !important; /* Distribute space within the card */
+}
+
+.card-content-section {
+  flex-grow: 1 !important; /* Allow content section to grow and fill space */
+}
+
+.card-tags {
+  flex-wrap: nowrap !important; /* Prevent tags from wrapping */
+}
+
+.card-tags .tag {
+  white-space: nowrap !important; /* Ensure text inside tag doesn't wrap */
+}
+
+.research-header {
+  text-align: center !important;
+  padding: 40px 0 !important;
+}
+
+.research-header .section-title {
+  font-size: 3rem !important;
+  font-weight: 700 !important;
+  color: #333 !important;
+  margin-bottom: 20px !important;
+}
+
+.research-header p {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  font-size: 1.1em !important;
+  color: #666 !important;
+  max-width: 900px !important;
+  margin: 0 auto !important;
+}
+
+.research-number {
+  font-size: 1.5em !important;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 1024px) {
+  .research-topics-panel {
+    flex-direction: column !important;
+    gap: 20px !important;
+    align-items: center !important;
+  }
+
+  .research-topic-item {
+    min-width: auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 20px !important;
+  }
+
+  .research-scroll-container {
+    max-width: 100% !important;
+    padding: 20px 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .research-scroll-section {
+    padding: 40px 0 !important;
+  }
+
+  .research-header .section-title {
+    font-size: 2.2rem !important;
+  }
+
+  .research-header p {
+    font-size: 1rem !important;
+  }
+
+  .research-topic-item {
+    padding: 0 15px !important;
+  }
+}

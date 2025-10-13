@@ -1,0 +1,902 @@
+<!DOCTYPE HTML>
+<!--
+	Concept by gettemplates.co
+	Twitter: http://twitter.com/gettemplateco
+	URL: http://gettemplates.co
+-->
+<html>
+	<head>
+		
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-PTXJ1903ZF"></script>
+	<script>
+  		window.dataLayer = window.dataLayer || [];
+  		function gtag(){dataLayer.push(arguments);}
+  		gtag('js', new Date());
+  		gtag('config', 'G-PTXJ1903ZF');
+	</script>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Kojima Lab</title>
+	<link rel="icon" type="image/png" href="images/KojimaLab_logo.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="横浜国立大学小島研究室の公式サイト。物理層鍵生成・セマンティック通信などの研究紹介と業績一覧。" />
+	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="gettemplates.co" />
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+	
+	<style>
+		.research-topic-item.active {
+			opacity: 1 !important;
+		}
+		
+		.wifi-image.active {
+			opacity: 1 !important;
+		}
+		
+		.signal-dot.active {
+			background: linear-gradient(to bottom, #1e90ff, #007acc) !important;
+			box-shadow: 0 0 0 4px rgba(30, 144, 255, 0.2) !important;
+		}
+	</style>
+	
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+	
+	<!-- Loading Screen -->
+	<div id="loading-screen">
+		<!-- Particle Background -->
+		<div class="loading-particles" id="particles"></div>
+		
+		<!-- Loading Content -->
+		<div class="loading-content">
+			<!-- WiFi Signal Animation -->
+			<div class="wifi-signal">
+				<div class="wifi-arc"></div>
+				<div class="wifi-arc"></div>
+				<div class="wifi-arc"></div>
+				<div class="wifi-arc"></div>
+				<div class="wifi-center"></div>
+			</div>
+			
+			<!-- Logo -->
+			<img src="images/KojimaLab_logo.png" alt="Kojima Lab Logo" class="loading-logo">
+			
+			<!-- Title -->
+			<h1 class="loading-title">KOJIMA LAB</h1>
+			<p class="loading-subtitle">Wireless Communications & Machine Learning</p>
+			
+			<!-- Loading Bar -->
+			<div class="loading-bar-container">
+				<div class="loading-bar" id="loadingBar"></div>
+			</div>
+			
+			<!-- Loading Percent -->
+			<div class="loading-percent" id="loadingPercent">0%</div>
+			
+			<!-- Loading Status -->
+			<div class="loading-status" id="loadingStatus">Initializing...</div>
+		</div>
+	</div>
+		
+	<div class="fh5co-loader"></div>
+	
+	<div id="page">
+	<nav class="fh5co-nav" role="navigation">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-2 text-left">
+					<div id="fh5co-logo">
+						<a href="index.html" class="logo-link">
+						  <img src="images/KojimaLab_logo.png" alt="Lab logo" class="logo-icon">
+						  <span class="logo-text">Kojima&nbsp;Lab</span>
+						</a>
+					  </div>
+				</div>
+				<div class="col-xs-10 text-right menu-1">
+					<ul>
+						<li class="active"><a href="index.html">Home</a></li>
+						<li class="has-dropdown">
+							<a href="research.html">研究テーマ</a>
+							<!--<ul class="dropdown">
+								<li><a href="#">Semantic Communication</a></li>
+								<li><a href="#">Physical Layer Security</a></li>
+								<li><a href="#">Backscatter Communication</a></li>
+								<li><a href="#">Stacked RIS</a></li>
+							</ul>-->
+						</li>
+
+						<li><a href="publication.html">研究業績</a></li>
+						<li><a href="member.html">メンバー</a></li>
+						<li><a href="award&grant.html">受賞/助成</a></li>
+						<li><a href="aboutlab.html">研究室について</a></li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+	</nav>
+
+	<header id="fh5co-header" class="fh5co-cover" data-stellar-background-ratio="0.5">
+		<video autoplay muted loop id="background-video">
+<source src="videos/back1.mp4" type="video/mp4">
+			<img src="images/back.png" alt="Background">
+		</video>
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-7 text-left">
+					<div class="display-t">
+						<div class="display-tc animate-box" data-animate-effect="fadeInUp">
+							<h1 class="mb30 typewriter" id="main-title">
+								<div class="typing-line">
+									<span class="typing-text" id="line1"></span>
+									<span class="cursor" id="cursor1"></span>
+								</div>
+								<div class="typing-line">
+									<span class="typing-text" id="line2"></span>
+									<span class="cursor" id="cursor2"></span>
+								</div>
+								<div class="typing-line">
+									<span class="typing-text" id="line3"></span>
+									<span class="cursor" id="cursor3"></span>
+								</div>
+							</h1>
+							<h3 class="lab-jp animate-box" data-animate-effect="fadeInUp" id="sub-title">横浜国立大学 小島研究室</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+
+
+	<!-- ===== News ===== -->
+	<div id="fh5co-project" class="timeline-news-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<!-- タイトル -->
+					<div class="section-header-unified timeline-header animate-box" data-animate-effect="fadeInDown">
+						<div class="section-badge-unified" style="display: inline-block;">
+							<i class="fas fa-newspaper"></i>
+							<span>Latest Updates</span>
+						</div>
+						<h2 class="timeline-main-title">News</h2>
+					</div>
+
+					<!-- タイムライン -->
+					<div class="timeline-container">
+						<!-- 中央の縦線 -->
+						<div class="timeline-line"></div>
+
+						<!-- ニュースアイテム 1 - 左 -->
+						<div class="timeline-item timeline-left animate-box" data-animate-effect="fadeInLeft">
+							<div class="timeline-content">
+								<div class="news-date">2025.10.01</div>
+								<div class="news-category new-members">New Members</div>
+								<h3 class="news-title">新メンバー配属</h3>
+								<p class="news-description">3年生が3名配属（プレ配属）されました。</p>
+							</div>
+							<div class="timeline-dot"></div>
+						</div>
+
+						<!-- ニュースアイテム 2 - 右 -->
+						<div class="timeline-item timeline-right animate-box" data-animate-effect="fadeInRight">
+							<div class="timeline-content">
+								<div class="news-date">2025.09.26</div>
+								<div class="news-category publication">Publication</div>
+								<h3 class="news-title">国際会議論文採択</h3>
+								<p class="news-description">当研究室の学生2名の論文が国際会議ICETC2025に採択されました。</p>
+								<div class="news-details">
+									<div class="paper-item">Inlyeok Choi and Shun Kojima, "Semantic Communications using Stacked Intelligent Metasurfaces"</div>
+									<div class="paper-item">Ryo Nishizono and Shun Kojima, "High-precision Phase Screen Prediction by Diffusion Model in Free-space Optical Communications"</div>
+								</div>
+							</div>
+							<div class="timeline-dot"></div>
+						</div>
+
+						<!-- ニュースアイテム 3 - 左 -->
+						<div class="timeline-item timeline-left animate-box" data-animate-effect="fadeInLeft">
+							<div class="timeline-content">
+								<div class="news-date">2025.09.08</div>
+								<div class="news-category research">Research</div>
+								<h3 class="news-title">学会発表</h3>
+								<p class="news-description">当研究室の学生2名が電子情報通信学会ソサイエティ大会＠岡山で発表しました。</p>
+								<div class="news-details">
+									<div class="paper-item">Inlyeok Choi, 小島駿, "Stacked Intelligent Metasurface を用いたセマンティック通信"</div>
+									<div class="paper-item">西薗 遼, 小島駿, "自由空間光通信における拡散モデルによる大気乱流予測の初期検討"</div>
+								</div>
+							</div>
+							<div class="timeline-dot"></div>
+						</div>
+
+						<!-- ニュースアイテム 4 - 右 -->
+						<div class="timeline-item timeline-right animate-box" data-animate-effect="fadeInRight">
+							<div class="timeline-content">
+								<div class="news-date">2025.05.07</div>
+								<div class="news-category announcement">Announcement</div>
+								<h3 class="news-title">ホームページ開設</h3>
+								<p class="news-description">ホームページを開設しました。</p>
+							</div>
+							<div class="timeline-dot"></div>
+						</div>
+
+						<!-- ニュースアイテム 5 - 左 -->
+						<div class="timeline-item timeline-left animate-box" data-animate-effect="fadeInLeft">
+							<div class="timeline-content">
+								<div class="news-date">2025.04.01</div>
+								<div class="news-category award">Award</div>
+								<h3 class="news-title">研究助成採択</h3>
+								<p class="news-description">小島助教の研究課題が戦略的創造研究推進事業（ACT-X） 加速フェーズに採択されました。</p>
+							</div>
+							<div class="timeline-dot"></div>
+						</div>
+
+						<!-- ニュースアイテム 6 - 右 -->
+						<!-- ニュースアイテム 6 - 右 -->
+						<div class="timeline-item timeline-right animate-box" data-animate-effect="fadeInRight">
+							<div class="timeline-content">
+								<div class="news-date">2025.04.01</div>
+								<div class="news-category milestone">Milestone</div>
+								<h3 class="news-title">研究室発足</h3>
+								<p class="news-description">小島研究室が発足しました。</p>
+					</div>
+					<div class="timeline-dot"></div>
+				</div>
+
+				                    </div>
+				                    
+				                    <!-- See More ボタンをCTAスタイルで配置 -->
+				                    <div class="news-see-more-wrapper">
+				                        <a href="news-archive.html" class="btn btn-primary news-see-more-link">See&nbsp;More&nbsp;›</a>
+				                    </div>
+
+								</div>
+
+							</div>	</div><!-- /#fh5co-project -->
+
+	<!-- Section Divider -->
+	<div class="section-divider"></div>
+
+	<!-- ===== 研究業績 ===== -->
+	<div id="fh5co-counter">
+		<video autoplay muted loop id="research-background-video">
+			<source src="videos/back1.mp4" type="video/mp4">
+			<img src="images/back.png" alt="Background">
+		</video>
+		<div class="overlay"></div>
+		<!-- 固定ヘッダー -->
+		<div class="research-header">
+			<div class="container">
+				<div class="section-header-unified animate-box" data-animate-effect="fadeInDown">
+					<div class="section-badge-unified" style="display: inline-block;">
+						<i class="fas fa-flask"></i>
+						<span>Research Topics</span>
+					</div>
+					<h2 class="timeline-main-title">研究テーマ</h2>
+					<p class="section-subtitle">小島研究室では、これまでの通信技術の限界の打破を目指し、機械学習と無線通信を高度に融合させることで、新しい通信パラダイムを実現するような研究に取り組んでいます。</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- スクロールコンテナ -->
+		<div class="research-scroll-container">
+			<div class="research-content-wrapper">
+				<!-- WiFi画像 - 左側 -->
+				<div class="wifi-visualization-panel">
+					<div class="wifi-glow-effect"></div>
+					<div class="wifi-image-stack">
+						<img src="images/wifi3.png" alt="WiFi Signal Strong" class="wifi-image active" data-wifi="3">
+						<img src="images/wifi2.png" alt="WiFi Signal Medium" class="wifi-image" data-wifi="2">
+						<img src="images/wifi1.png" alt="WiFi Signal Weak" class="wifi-image" data-wifi="1">
+					</div>
+					<div class="wifi-signal-indicator">
+						<div class="signal-dot" data-signal="3"></div>
+						<div class="signal-dot" data-signal="2"></div>
+						<div class="signal-dot" data-signal="1"></div>
+					</div>
+				</div>
+
+				<!-- 研究テーマカード - 右側 -->
+				<div class="research-topics-panel">
+					<!-- トピック1: セマンティック通信 -->
+					<div class="research-topic-item" data-step="1">
+						<a href="research.html#semantic" class="topic-card-link">
+							<div class="topic-card-modern">
+								<div class="card-header-section">
+									<div class="icon-wrapper gradient-purple">
+										<i class="icon-book"></i>
+									</div>
+									<div class="card-title-group">
+										<span class="research-number">01</span>
+										<h3 class="card-title">セマンティック通信</h3>
+									</div>
+								</div>
+								<div class="card-content-section">
+									<p class="card-description">深層生成モデルを用いて、意味情報を直接やり取りする次世代通信方式を探究。データ圧縮の限界を超え、知識共有による革新的な通信を実現します。</p>
+									<div class="topic-video-wrapper">
+										<video autoplay loop muted playsinline class="topic-video-enhanced">
+											<source src="images/semantic.mp4" type="video/mp4">
+											<img src="images/semantic.png" alt="セマンティック通信 概要図" class="topic-image-enhanced">
+										</video>
+										<div class="image-overlay-gradient"></div>
+									</div>
+								</div>
+								<div class="card-tags">
+									<span class="tag">AI/ML</span>
+									<span class="tag">Next-Gen</span>
+									<span class="tag">Semantic</span>
+								</div>
+							</div>
+						</a>
+					</div>
+
+					<!-- トピック2: 物理層セキュリティ -->
+					<div class="research-topic-item" data-step="2">
+						<a href="research.html#security" class="topic-card-link">
+							<div class="topic-card-modern">
+								<div class="card-header-section">
+									<div class="icon-wrapper gradient-blue">
+										<i class="icon-lock"></i>
+									</div>
+									<div class="card-title-group">
+										<span class="research-number">02</span>
+										<h3 class="card-title">物理層セキュリティ</h3>
+									</div>
+								</div>
+								<div class="card-content-section">
+									<p class="card-description">鍵生成や人工フェージングにより、暗号に依存しない安全な無線リンクを実現。物理的特性を活用した究極のセキュリティを追求します。</p>
+									<div class="topic-video-wrapper">
+										<video autoplay loop muted playsinline class="topic-video-enhanced">
+											<source src="images/PLS.mp4" type="video/mp4">
+											<img src="images/PLS.png" alt="物理層セキュリティ 概要図" class="topic-image-enhanced">
+										</video>
+										<div class="image-overlay-gradient"></div>
+									</div>
+								</div>
+								<div class="card-tags">
+									<span class="tag">Security</span>
+									<span class="tag">PLS</span>
+									<span class="tag">Key Generation</span>
+								</div>
+							</div>
+						</a>
+					</div>
+
+					<!-- トピック3: 光無線通信 -->
+					<div class="research-topic-item" data-step="3">
+						<a href="research.html#optical" class="topic-card-link">
+							<div class="topic-card-modern">
+								<div class="card-header-section">
+									<div class="icon-wrapper gradient-orange">
+										<i class="icon-sun"></i>
+									</div>
+									<div class="card-title-group">
+										<span class="research-number">03</span>
+										<h3 class="card-title">光無線通信</h3>
+									</div>
+								</div>
+								<div class="card-content-section">
+									<p class="card-description">自由空間光を用いた大容量・低遅延リンクのチャネル推定と補償手法を研究。大気乱流の影響を克服し、次世代の無線バックホールを実現します。</p>
+									<div class="topic-video-wrapper">
+										<video autoplay loop muted playsinline class="topic-video-enhanced">
+											<source src="images/FSO.mp4" type="video/mp4">
+											<img src="images/FSO.png" alt="光無線通信 概要図" class="topic-image-enhanced">
+										</video>
+										<div class="image-overlay-gradient"></div>
+									</div>
+								</div>
+								<div class="card-tags">
+									<span class="tag">FSO</span>
+									<span class="tag">High-Speed</span>
+									<span class="tag">Optical</span>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- See More ボタン -->
+			<div class="research-see-more-wrapper">
+				<a href="research.html" class="btn btn-primary research-see-more-link">See&nbsp;More&nbsp;›</a>
+			</div>
+		</div><!-- /.research-scroll-container -->
+
+		<!-- スクロール領域確保用スペーサー -->
+		<div class="research-scroll-spacer"></div>
+
+	</div><!-- /#fh5co-services -->
+
+	<!-- Section Divider -->
+	<div class="section-divider"></div>
+
+	<!-- ===== 研究業績 ===== -->
+	<div id="fh5co-counter">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-12">
+					<!-- Section Title -->
+					<div class="section-header-unified achievement-header animate-box" data-animate-effect="fadeInDown">
+						<div class="section-badge-unified" style="display: inline-block;">
+							<i class="fas fa-chart-line"></i>
+							<span>Research Achievements</span>
+						</div>
+						<h2 class="timeline-main-title">研究業績</h2>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				
+				<div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
+					<a href="publication.html#journals" class="counter-link">
+					<div class="feature-center">
+						<span class="icon">
+							<i class="ti-download"></i>
+						</span>
+						<span class="counter"><span class="js-counter" data-from="0" data-to="23" data-speed="1500" data-refresh-interval="50">1</span></span>
+						<span class="counter-label">Journal Papers</span>
+
+					</div>
+					</a>
+				</div>
+				<div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
+					<a href="publication.html#intl-conf" class="counter-link">
+					<div class="feature-center">
+							<span class="icon">
+								<i class="ti-face-smile"></i>
+							</span>
+							<span class="counter"><span class="js-counter" data-from="0" data-to="27" data-speed="1500" data-refresh-interval="50">1</span></span>
+							<span class="counter-label">International Conference Papers</span>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
+					<a href="publication.html#domestic-conf" class="counter-link">
+					<div class="feature-center">
+						<span class="icon">
+							<i class="ti-briefcase"></i>
+						</span>
+						<span class="counter"><span class="js-counter" data-from="0" data-to="46" data-speed="1500" data-refresh-interval="50">1</span></span>
+						<span class="counter-label">Domestic Conference Papers</span>
+					</div>
+					</a>
+				</div>
+				<div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
+					<a href="publication.html#misc" class="counter-link">
+					<div class="feature-center">
+						<span class="icon">
+							<i class="ti-time"></i>
+						</span>
+						<span class="counter"><span class="js-counter" data-from="0" data-to="3" data-speed="1500" data-refresh-interval="50">1</span></span>
+						<span class="counter-label">MISC</span>
+
+					</div>
+					</a>
+				</div>			
+		</div>
+
+		<!-- See More ボタンをCTAスタイルで配置 -->
+		<div class="publication-see-more-wrapper">
+			<a href="publication.html" class="btn btn-primary publication-see-more-link">See&nbsp;More&nbsp;›</a>
+		</div>
+		
+	</div>
+</div>	<!-- Section Divider -->
+	<div class="section-divider"></div>
+
+<!-- イベント紹介セクション - 新デザイン -->
+<section class="activity-cta-section-new">
+    <div class="container">
+        <div class="activity-showcase">
+            <!-- 左側: テキストコンテンツ -->
+            <div class="activity-text-content">
+                <div class="section-badge">
+                    <i class="fas fa-calendar-star"></i>
+                    <span>Events & Activities</span>
+                </div>
+                <h2 class="activity-main-title">イベント紹介</h2>
+                <p class="activity-subtitle">研究だけじゃない、私たちの日常を覗いてみませんか？</p>
+            </div>
+            
+            <!-- 右側: ビジュアル装飾 -->
+            <div class="activity-visual-content">
+                <div class="visual-decoration">
+                    <div class="icon-float icon-1">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <div class="icon-float icon-2">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="icon-float icon-3">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="icon-float icon-4">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <div class="gradient-circle circle-1"></div>
+                    <div class="gradient-circle circle-2"></div>
+                    <div class="gradient-circle circle-3"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- See More ボタン -->
+        <div class="activity-see-more-wrapper">
+            <a href="aboutlab.html#activity-report" class="btn btn-primary activity-see-more-link">See&nbsp;More&nbsp;›</a>
+        </div>
+    </div>
+</section>
+
+	<!-- ===== Access & Contact ===== -->
+	<div id="fh5co-access" class="border-bottom bg-grey">
+		<div class="container">
+  
+	  		<!-- 見出し -->
+	  		<div class="section-header-unified animate-box" data-animate-effect="fadeInDown">
+				<div class="section-badge-unified">
+					<i class="fas fa-envelope"></i>
+					<span>Contact</span>
+				</div>
+				<h2 class="timeline-main-title">連絡先</h2>
+				<p class="section-subtitle-unified">ご質問・共同研究のご相談は下記までお気軽にご連絡ください。</p>
+	  		</div>
+  
+	  		<!-- Map + Contact を 2 カラムで -->
+	  		<div class="row">
+  
+				<!-- ① Google Map -->
+				<div class="col-md-7">
+		  			<div class="map-responsive mb30">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241.
+						4996241663222!2d139.58970617129117!3d35.47413261321062!2m3!1f0!2f0!3f0!
+						3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601859f6a899915b%3A0xf44e6da66ee29d8
+						3!2z5qiq5rWc5Zu956uL5aSn5a2mIOmbu-WtkOaDheWgseW3peWtpuajnyhONi0yKQ!5e0!3
+						m2!1sja!2sjp!4v1746493629544!5m2!1sja!2sjp" width="800" height="400" style="border:0;" 
+						allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		  			</div>
+				</div>
+  
+				<!-- ② Contact info -->
+				<div class="col-md-5">
+		  			<ul class="contact-list">
+						<li><i class="icon-envelope"></i>
+							住所：〒240‑0067 神奈川県横浜市保土ケ谷区常盤台 79‑5<br>
+							電子情報工学棟 806・808 号室
+						</li>
+						<li><i class="icon-envelope"></i> 所属：横浜国立大学大学院 工学研究院 知的構造の創生部門</li>
+						<li><i class="icon-envelope"></i> 氏名：小島 駿</li>
+						<li><i class="icon-envelope"></i> E-mail：kojima-shun-wz@ynu.ac.jp</li>
+		  			</ul>
+				</div>
+  
+	  		</div><!-- /.row -->
+		</div><!-- /.container -->
+  	</div><!-- /#fh5co-access -->
+
+
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+		
+		  /* ------------------------------------------------------ *
+		   *  publication.html を読み込み → 件数を取得してカウンタ更新  *
+		   * ------------------------------------------------------ */
+		
+		  fetch('publication.html')
+			.then(r => r.text())
+			.then(html => {
+		
+			  /* HTML 文字列 → DOM に変換 */
+			  const pubDoc = new DOMParser().parseFromString(html, 'text/html');
+		
+			  /* ↓ publication.html 側で使っている ID と正式ラベルの対応 */
+			  const map = {
+				'Journal Papers'                : 'journals',
+				'International Conference Papers': 'intl-conf',
+				'Domestic Conference Papers'    : 'domestic-conf',
+				'MISC'                          : 'misc'
+			  };
+		
+			  Object.entries(map).forEach(([label, id]) => {
+				const list = pubDoc.querySelector(`#${id} .pub-list`);
+				if(!list) return;                               // そのリストが無ければ skip
+				const n = list.querySelectorAll('li').length;   // 件数を取得
+		
+				/* ---------- ホームのカウンタを書き換え ---------- */
+				document.querySelectorAll('#fh5co-counter .counter-label')
+						.forEach(lblEl => {
+				  if(lblEl.textContent.trim() !== label) return;
+				  const numEl = lblEl.parentElement.querySelector('.js-counter');
+				  if(numEl){
+					numEl.setAttribute('data-to', n); // countTo 用の最終値
+					numEl.textContent = n;            // 非 JS 環境でも合うように
+				  }
+				});
+			  });
+		
+			  /* もし countTo が既にセットされていれば
+				 Waypoints 発火前でも次の行でアニメを開始できる ↓
+				 $('.js-counter').countTo(); */
+		
+			})
+			.catch(err => console.error('publication.html 読み込み失敗:', err));
+		});
+	</script>
+
+
+
+
+
+
+
+
+
+	<footer id="fh5co-footer" class="bg-dark" role="contentinfo">
+		<div class="container">
+	  
+			<div class="row row-pb-md">
+	  
+				<!-- 関連リンク：1 カラム -->
+				<div class="col-md-4 col-sm-6 fh5co-widget">
+			  		<h3 class="footer-title">関連リンク</h3>
+			  		<ul class="fh5co-footer-links">
+						<li><a href="https://www.ynu.ac.jp/" target="_blank">横浜国立大学 公式サイト</a></li>
+						<li><a href="https://www.fse.ynu.ac.jp/" target="_blank">横浜国立大学 大学院 工学研究院</a></li>
+						<li><a href="https://er-web.ynu.ac.jp/html/KOJIMA_Shun/ja.html" target="_blank">研究者総覧</a></li>
+			  		</ul>
+				</div>
+	  
+				<!-- 追加で列を並べたいときは ↓ をコピーして col‑md‑2/3 等に変更 -->
+				<!--
+				<div class="col-md-4 col-sm-6 fh5co-widget">
+			  		<h3 class="footer-title">学会リンク</h3>
+			  		<ul class="fh5co-footer-links">
+						<li><a href="#">リンク A</a></li>
+						…
+			  		</ul>
+				</div>
+				-->
+	  
+		  	</div><!-- /.row -->
+	  
+		  	<div class="row copyright">
+				<div class="col-md-12 text-center">
+			  	<small class="block">&copy; 2025 Kojima Lab. All Rights Reserved.</small>
+				  <small class="block">Designed by <a href="http://gettemplates.co/" 
+					target="_blank">GetTemplates.co</a> </small>
+				</div>
+		  	</div>
+	  
+			</div><!-- /.container -->
+	</footer>
+
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+	
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- countTo -->
+	<script src="js/jquery.countTo.js"></script>
+	<!-- Magnific Popup -->
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/magnific-popup-options.js"></script>
+	<!-- Stellar -->
+	<script src="js/jquery.stellar.min.js"></script>
+	<!-- Main -->
+	<script src="js/main.js"></script>
+	<!-- Chart.js -->
+	<!-- Research Scroll Animation -->
+	<script src="js/research-scroll.js"></script>
+	<!-- Particle Repel Effect -->
+	<script src="js/particle-repel.js"></script>
+	
+	<!-- Loading Screen Animation -->
+	<script>
+		(function() {
+			// 세션 체크 - 처음 방문인지 확인
+			const hasVisited = sessionStorage.getItem('hasVisited');
+			const loadingScreen = document.getElementById('loading-screen');
+			
+			// 이미 방문한 적이 있으면 로딩 화면 DOM에서 즉시 제거
+			if (hasVisited) {
+				if (loadingScreen) {
+					loadingScreen.remove();
+				}
+				return;
+			}
+			
+			// 처음 방문임을 표시 (다른 페이지로 이동하기 전에 설정)
+			sessionStorage.setItem('hasVisited', 'true');
+			
+			// 로딩 화면 표시
+			loadingScreen.classList.add('show');
+			
+			const loadingBar = document.getElementById('loadingBar');
+			const loadingPercent = document.getElementById('loadingPercent');
+			const loadingStatus = document.getElementById('loadingStatus');
+			const particlesContainer = document.getElementById('particles');
+			
+			// 파티클 생성
+			function createParticles() {
+				const particleCount = 50;
+				for (let i = 0; i < particleCount; i++) {
+					const particle = document.createElement('div');
+					particle.className = 'particle';
+					particle.style.left = Math.random() * 100 + '%';
+					particle.style.animationDelay = Math.random() * 4 + 's';
+					particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+					particlesContainer.appendChild(particle);
+				}
+			}
+			
+			createParticles();
+			
+			// 로딩 상태 메시지
+			const statusMessages = [
+				'Initializing...',
+				'Loading resources...',
+				'Connecting network...',
+				'Processing data...',
+				'Optimizing interface...',
+				'Almost ready...',
+				'Complete!'
+			];
+			
+			let progress = 0;
+			let targetProgress = 0;
+			let displayProgress = 0;
+			let statusIndex = 0;
+			
+			// 부드러운 숫자 증가를 위한 함수
+			function smoothUpdate() {
+				// 표시되는 진행률을 목표 진행률로 부드럽게 이동
+				const diff = targetProgress - displayProgress;
+				displayProgress += diff * 0.15; // 부드러운 따라가기 효과
+				
+				// 반올림하여 표시
+				const roundedProgress = Math.round(displayProgress);
+				loadingBar.style.width = displayProgress + '%';
+				loadingPercent.textContent = roundedProgress + '%';
+				
+				// 상태 메시지 업데이트
+				const newStatusIndex = Math.floor((displayProgress / 100) * (statusMessages.length - 2));
+				if (newStatusIndex !== statusIndex && newStatusIndex < statusMessages.length - 1) {
+					statusIndex = newStatusIndex;
+					loadingStatus.textContent = statusMessages[statusIndex];
+				}
+				
+				// 100%에 거의 도달했으면 완료 처리
+				if (displayProgress >= 99.5 && targetProgress >= 100) {
+					displayProgress = 100;
+					loadingBar.style.width = '100%';
+					loadingPercent.textContent = '100%';
+					
+					// 로딩 완료
+					setTimeout(function() {
+						loadingStatus.textContent = statusMessages[statusMessages.length - 1];
+						
+						// 페이드아웃
+						setTimeout(function() {
+							loadingScreen.classList.add('fade-out');
+							
+							// DOM에서 완전히 제거
+							setTimeout(function() {
+								loadingScreen.remove();
+							}, 800);
+						}, 500);
+					}, 300);
+				} else {
+					// 계속 업데이트
+					requestAnimationFrame(smoothUpdate);
+				}
+			}
+			
+			// 목표 진행률 증가
+			const loadingInterval = setInterval(function() {
+				targetProgress += Math.random() * 8 + 4; // 4~12씩 증가 (더 빠르게)
+				
+				if (targetProgress >= 100) {
+					targetProgress = 100;
+					clearInterval(loadingInterval);
+				}
+			}, 120); // 150ms → 120ms (더 빠르게)
+			
+			// 부드러운 업데이트 시작
+			requestAnimationFrame(smoothUpdate);
+			
+			// 최소 로딩 시간 보장 (2.5초로 단축)
+			setTimeout(function() {
+				if (targetProgress < 100) {
+					targetProgress = 100;
+				}
+			}, 2500);
+			
+			// 페이지 완전 로드 시
+			window.addEventListener('load', function() {
+				// 이미 로딩이 완료되지 않았다면 진행률을 100%로
+				if (progress < 100) {
+					progress = 100;
+					loadingBar.style.width = '100%';
+					loadingPercent.textContent = '100%';
+				}
+			});
+		})();
+	</script>
+
+	<!-- Background Video Error Handling -->
+	<script>
+		(function() {
+			const video = document.getElementById('background-video');
+			if (video) {
+				// 비디오 로딩 에러 처리
+				video.addEventListener('error', function(e) {
+					console.log('Video loading failed, using fallback image');
+					// 비디오를 숨기고 CSS 배경 이미지가 보이도록
+					video.style.display = 'none';
+				}, true);
+				
+				// 비디오 로딩 실패 시 타임아웃
+				setTimeout(function() {
+					if (video.readyState === 0 || video.error) {
+						console.log('Video loading timeout, using fallback image');
+						video.style.display = 'none';
+					}
+				}, 3000);
+				
+				// 비디오 로드 성공 시
+				video.addEventListener('loadeddata', function() {
+					console.log('Video loaded successfully');
+				});
+			}
+		})();
+	</script>
+
+	</body>
+</html>
+

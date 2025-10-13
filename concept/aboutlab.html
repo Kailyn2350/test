@@ -1,0 +1,1383 @@
+<!DOCTYPE HTML>
+<!--
+	Concept by gettemplates.co
+	Twitter: http://twitter.com/gettemplateco
+	URL: http://gettemplates.co
+-->
+<html>
+	<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-PTXJ1903ZF"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-PTXJ1903ZF');
+	</script>
+	
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Kojima Lab</title>
+	<link rel="icon" type="image/png" href="images/KojimaLab_logo.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="横浜国立大学小島研究室の公式サイト。物理層鍵生成・セマンティック通信などの研究紹介と業績一覧。" />
+	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="gettemplates.co" />
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+	
+	<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+<style>
+/* --- Main Chalkboard and Paper Notes Design --- */
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* Removed old chalkboard styles */
+
+.main-chalkboard-title {
+    font-family: 'Open Sans', sans-serif; /* Modern, thin, powerful sans-serif font */
+    color: #3A4E8A; /* Deep cyber blue */
+    font-size: 40px; /* Adjusted size */
+    text-align: center;
+    margin-bottom: 40px;
+    min-height: 80px;
+    letter-spacing: 0.05em; /* Slightly increased letter spacing */
+    display: none; /* Hide KOJIMA LAB */
+}
+
+/* New info-card styles */
+.info-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure cards stretch to equal height */
+}
+
+        .info-card:hover {
+            transform: translateY(-3px);
+            background: #f5f7fa; /* Subtle blue-grey background */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15), 0 0 8px rgba(58, 78, 138, 0.6), 0 0 15px rgba(58, 78, 138, 0.3);
+        }
+
+    
+
+    #fh5co-about {
+        background-image:
+            repeating-linear-gradient(0deg, rgba(0,0,0,0.02) 0, rgba(0,0,0,0.02) 1px, transparent 1px, transparent 20px),
+            repeating-linear-gradient(90deg, rgba(0,0,0,0.02) 0, rgba(0,0,0,0.02) 1px, transparent 1px, transparent 20px);
+        background-size: 20px 20px; /* Adjust for grid density */
+    }
+
+    
+
+    .card-header-section {
+
+        display: flex;
+
+        align-items: center;
+
+        margin-bottom: 15px;
+
+    }
+
+.icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #3A4E8A, #2E3A87); /* Blue gradient */
+    box-shadow: 0 4px 10px rgba(58, 78, 138, 0.3);
+    margin-right: 15px;
+}
+
+    .card-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .icon-wrapper i {
+        font-size: 1.5em; /* Adjust size as needed */
+        color: #ffffff; /* White color for icons */
+    }
+.card-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+.card-content-section {
+    flex-grow: 1; /* Allow content to take available space */
+}
+
+.card-description {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* モバイル最適化 - Info Cards */
+@media (max-width: 768px) {
+    .main-chalkboard-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+        min-height: 60px;
+    }
+    
+    .info-card {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .icon-wrapper {
+        width: 40px;
+        height: 40px;
+        margin-right: 12px;
+    }
+    
+    .icon-wrapper i {
+        font-size: 1.2em;
+    }
+    
+    .card-title {
+        font-size: 18px;
+    }
+    
+    .card-description {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-chalkboard-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+        min-height: 50px;
+    }
+    
+    .info-card {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .icon-wrapper {
+        width: 35px;
+        height: 35px;
+        margin-right: 10px;
+    }
+    
+    .icon-wrapper i {
+        font-size: 1em;
+    }
+    
+    .card-title {
+        font-size: 16px;
+    }
+    
+    .card-description {
+        font-size: 13px;
+    }
+}
+
+/* Daily Schedule Section */
+.daily-schedule-section {
+    padding: 7em 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    text-align: center;
+}
+
+.daily-schedule-section .section-title {
+    font-family: 'Open Sans', sans-serif;
+    color: #3A4E8A;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 15px;
+}
+
+.daily-schedule-section .section-lead {
+    font-family: 'Open Sans', sans-serif;
+    color: #555;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.timeline-schedule {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* タイムライン中央の縦線 */
+.timeline-schedule::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #3A4E8A 0%, #87CEEB 100%);
+    border-radius: 2px;
+    z-index: 0;
+}
+
+.schedule-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.schedule-item:last-child {
+    margin-bottom: 0;
+}
+
+.schedule-time {
+    flex: 0 0 50%;
+    text-align: right;
+    padding-right: 50px;
+}
+
+.time-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #3A4E8A, #2E3A87);
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 12px 30px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(58, 78, 138, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.schedule-content {
+    flex: 0 0 50%;
+    text-align: left;
+    padding-left: 50px;
+    position: relative;
+}
+
+.schedule-icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 2;
+}
+
+.schedule-icon-wrapper i {
+    font-size: 2em;
+    color: white;
+}
+
+/* アイコンの色分け */
+.schedule-icon-wrapper.morning {
+    background: linear-gradient(135deg, #FFD93D, #FFA500);
+}
+
+.schedule-icon-wrapper.seminar {
+    background: linear-gradient(135deg, #4A90E2, #357ABD);
+}
+
+.schedule-icon-wrapper.lunch {
+    background: linear-gradient(135deg, #FF6B6B, #EE5A6F);
+}
+
+.schedule-icon-wrapper.research {
+    background: linear-gradient(135deg, #6C5CE7, #A29BFE);
+}
+
+.schedule-icon-wrapper.evening {
+    background: linear-gradient(135deg, #00B894, #55EFC4);
+}
+
+.schedule-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.schedule-description {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.3;
+    margin: 0;
+    letter-spacing: 0.03em;
+}
+
+.schedule-note {
+    margin-top: 60px;
+    padding: 25px;
+    background: white;
+    border-left: 4px solid #3A4E8A;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.schedule-note i {
+    font-size: 24px;
+    color: #3A4E8A;
+    flex-shrink: 0;
+}
+
+.schedule-note p {
+    margin: 0;
+    font-size: 15px;
+    color: #555;
+    text-align: left;
+}
+
+/* モバイル対応 - Daily Schedule */
+@media (max-width: 768px) {
+    .daily-schedule-section {
+        padding: 4em 0;
+    }
+    
+    .daily-schedule-section .section-title {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+    
+    .daily-schedule-section .section-lead {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+    
+    .timeline-schedule::before {
+        left: 25px;
+    }
+    
+    .schedule-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 70px;
+        margin-bottom: 30px;
+    }
+    
+    .schedule-time {
+        flex: none;
+        text-align: left;
+        padding-right: 0;
+        margin-bottom: 10px;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    
+    .time-badge {
+        font-size: 14px;
+        padding: 6px 15px;
+    }
+    
+    .schedule-content {
+        flex: none;
+        padding-left: 0;
+        padding-top: 0;
+        width: 100%;
+    }
+    
+    .schedule-icon-wrapper {
+        width: 45px;
+        height: 45px;
+        position: relative;
+        left: auto;
+        top: auto;
+        margin-bottom: 10px;
+    }
+    
+    .schedule-icon-wrapper i {
+        font-size: 1.2em;
+    }
+    
+    .schedule-title {
+        margin-top: 0;
+        font-size: 16px;
+    }
+    
+    .schedule-description {
+        font-size: 13px;
+        line-height: 1.3;
+    }
+    
+    .schedule-note {
+        flex-direction: column;
+        text-align: center;
+        font-size: 12px;
+    }
+    
+    .schedule-note p {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .daily-schedule-section {
+        padding: 3em 0;
+    }
+    
+    .daily-schedule-section .section-title {
+        font-size: 22px;
+    }
+    
+    .daily-schedule-section .section-lead {
+        font-size: 13px;
+    }
+    
+    .schedule-item {
+        padding-left: 60px;
+        margin-bottom: 25px;
+    }
+    
+    .time-badge {
+        font-size: 12px;
+        padding: 5px 12px;
+    }
+    
+    .schedule-icon-wrapper {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        left: auto;
+        top: auto;
+        margin-bottom: 8px;
+    }
+    
+    .schedule-icon-wrapper i {
+        font-size: 1em;
+    }
+    
+    .schedule-title {
+        font-size: 14px;
+    }
+    
+    .schedule-description {
+        font-size: 12px;
+        line-height: 1.3;
+    }
+    
+    .schedule-note {
+        font-size: 11px;
+    }
+}
+
+/* Activity Report Section */
+.activity-report-section {
+    padding: 7em 0; /* Consistent with other sections */
+    background: #fdfdfd; /* Light background */
+    text-align: center;
+    scroll-margin-top: 80px; /* 固定ナビゲーションの高さ分のオフセット */
+}
+
+.activity-report-section .section-title {
+    font-family: 'Open Sans', sans-serif;
+    color: #3A4E8A;
+    font-size: 36px; /* Slightly smaller than main title */
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 15px;
+}
+
+.activity-report-section .section-lead {
+    font-family: 'Open Sans', sans-serif;
+    color: #555;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.report-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.report-card {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    transition: all 0.2s ease-in-out;
+    text-decoration: none; /* Remove underline from link */
+    color: inherit; /* Inherit text color */
+    border: 1px solid transparent;
+    cursor: pointer; /* Show pointer cursor to indicate it's clickable */
+}
+
+.report-card:hover {
+    transform: translateY(-3px);
+    background: #f5f7fa; /* Subtle blue-grey background */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Keep original shadow for depth */
+    border-color: #3A4E8A; /* Elegant border fade-in */
+}
+.report-card .card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    color: #AAB7D5; /* Light tone of main color */
+}
+
+.report-card .activity-category {
+    background: rgba(58, 78, 138, 0.1); /* Light blue background */
+    color: #3A4E8A;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.report-card .activity-date {
+    color: #888;
+}
+
+.report-card .card-title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.report-card .card-summary {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* イベントカードの写真表示スタイル */
+.report-card {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    color: inherit;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    min-height: 200px;
+    position: relative;
+}
+
+.report-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.card-date-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px; /* 左上に配置 */
+    background: transparent; /* 背景を透明に */
+    color: #4A90E2; /* おしゃれな青色 */
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 1.1em; /* フォントサイズを大きく */
+    font-weight: 600;
+    box-shadow: none; /* 影を削除 */
+    z-index: 3;
+    white-space: nowrap; /* 日付が改行されないように */
+}
+
+.card-content {
+    flex: 1;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-image-wrapper {
+    position: relative;
+    width: 280px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.report-card:hover .card-image {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(46, 58, 135, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Allow clicks to pass through to the link */
+}
+
+.report-card:hover .image-overlay {
+    opacity: 1;
+}
+
+.overlay-content {
+    text-align: center;
+    color: white;
+}
+
+.overlay-content i {
+    font-size: 32px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.overlay-content span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+.activity-category {
+    background: rgba(58, 78, 138, 0.1);
+    color: #3A4E8A;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.activity-date {
+    color: #888;
+}
+
+.card-title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.card-summary {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .activity-report-section {
+        padding: 4em 0;
+    }
+    
+    .activity-report-section .section-title {
+        font-size: 26px;
+    }
+    
+    .activity-report-section .section-lead {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+    
+    .report-grid {
+        gap: 20px;
+    }
+    
+    .report-card {
+        flex-direction: column;
+        min-height: auto;
+        box-shadow: 0 4px 12px rgba(46, 58, 135, 0.15);
+        border: 1px solid rgba(46, 58, 135, 0.1);
+        cursor: pointer;
+    }
+    
+    .report-card:active {
+        transform: scale(0.98);
+        box-shadow: 0 2px 8px rgba(46, 58, 135, 0.2);
+    }
+    
+    .card-image-wrapper {
+        width: 100%;
+        height: 180px;
+    }
+    
+    /* モバイルで常に「詳細を見る」を表示 */
+    .image-overlay {
+        opacity: 1;
+        background: rgba(46, 58, 135, 0.45);
+        pointer-events: none;
+    }
+    
+    .overlay-content i {
+        font-size: 28px;
+        margin-bottom: 8px;
+    }
+    
+    .overlay-content span {
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+    }
+    
+    .card-date-badge {
+        font-size: 0.95em;
+        padding: 6px 12px;
+    }
+    
+    .card-content {
+        padding: 18px;
+    }
+    
+    .report-card .card-title {
+        font-size: 18px;
+    }
+    
+    .report-card .card-summary {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .activity-report-section .section-title {
+        font-size: 22px;
+    }
+    
+    .activity-report-section .section-lead {
+        font-size: 14px;
+    }
+    
+    .card-content {
+        padding: 15px;
+    }
+    
+    .card-date-badge {
+        font-size: 0.9em;
+        padding: 5px 10px;
+    }
+    
+    .report-card .card-title {
+        font-size: 16px;
+    }
+    
+    .report-card .card-summary {
+        font-size: 13px;
+    }
+    
+    .card-image-wrapper {
+        height: 160px;
+    }
+    
+    .overlay-content i {
+        font-size: 24px;
+    }
+    
+    .overlay-content span {
+        font-size: 14px;
+    }
+}
+
+.activity-category {
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.activity-date {
+    color: #888;
+    font-size: 14px;
+}
+
+/* 新しい研究室紹介バナーのモバイル対応 */
+@media (max-width: 768px) {
+    .new-lab-banner h2 {
+        font-size: 24px !important;
+    }
+    
+    .new-lab-banner p {
+        font-size: 16px !important;
+    }
+    
+    .new-lab-banner {
+        padding: 35px 25px !important;
+    }
+    
+    .new-lab-banner a {
+        padding: 12px 30px !important;
+        font-size: 15px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .new-lab-banner h2 {
+        font-size: 20px !important;
+    }
+    
+    .new-lab-banner p {
+        font-size: 15px !important;
+    }
+    
+    .new-lab-banner {
+        padding: 30px 20px !important;
+    }
+    
+    .new-lab-banner a {
+        padding: 10px 25px !important;
+        font-size: 14px !important;
+    }
+}
+</style>
+</head>
+	<body>
+		
+	<div class="fh5co-loader"></div>
+	
+	<div id="page">
+	<nav class="fh5co-nav" role="navigation">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-2 text-left">
+					<div id="fh5co-logo">
+						<a href="index.html" class="logo-link">
+						  <img src="images/KojimaLab_logo.png" alt="Lab logo" class="logo-icon">
+						  <span class="logo-text">Kojima&nbsp;Lab</span>
+						</a>
+					  </div>
+				</div>
+				<div class="col-xs-10 text-right menu-1">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li class="has-dropdown">
+							<a href="research.html">研究テーマ</a>
+							<!--<ul class="dropdown">
+								<li><a href="#">Semantic Communication</a></li>
+								<li><a href="#">Physical Layer Security</a></li>
+								<li><a href="#">Backscatter Communication</a></li>
+								<li><a href="#">Stacked RIS</a></li>
+							</ul>-->
+						</li>
+
+						<li><a href="publication.html">研究業績</a></li>
+						<li><a href="member.html">メンバー</a></li>
+						<li><a href="award&grant.html">受賞/助成</a></li>
+						<li class="active"><a href="aboutlab.html">研究室について</a></li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+	</nav>
+
+	<header id="fh5co-header" class="fh5co-cover">
+		<div id="particles-js" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;"></div>
+		<div class="overlay"></div>
+		<video playsinline autoplay muted loop id="bgvid" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+			<source src="videos/aboutlab.mp4" type="video/mp4">
+			<img src="images/back.png" alt="Background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+		</video>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-7 text-left">
+					<div class="display-t">
+						<div class="display-tc animate-box" data-animate-effect="fadeInUp">
+							<h1 class="mb30 typewriter" id="main-title" data-title="About">
+								<div class="typing-line">
+									<span class="typing-text" id="line1"></span>
+									<span class="cursor" id="cursor1"></span>
+								</div>
+							</h1>
+							<h3 class="lab-jp">研究室について</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+
+<div id="fh5co-about" class="about-lab-section">
+		<div class="container">
+			<!-- 新しい研究室紹介バナー -->
+			<div class="row" style="margin-bottom: 60px;">
+				<div class="col-md-12 animate-box" data-animate-effect="fadeInUp">
+					<div class="new-lab-banner" style="background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%); padding: 50px 40px; border-radius: 16px; text-align: center; border-left: 6px solid #2E3A87; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+						<h2 style="font-size: 32px; font-weight: 700; color: #2E3A87; margin-bottom: 20px; letter-spacing: 0.05em;">
+							<i class="fas fa-sparkles" style="margin-right: 10px; color: #F73859;"></i>
+							新しい研究室、一緒に創りませんか？
+						</h2>
+						<p style="font-size: 18px; line-height: 1.8; color: #444; max-width: 900px; margin: 0 auto;">
+							小島研究室は<strong style="color: #2E3A87;">2025年に誕生したばかりの新しい研究室</strong>です。<br>
+							だからこそ、メンバー全員で理想の研究環境を作り上げていくことができます。<br>
+							最先端の研究に挑戦しながら、<strong style="color: #F73859;">最高の研究室</strong>を一緒に築いていきませんか？<br>
+							あなたのアイデアや個性が、研究室の文化を形作る大切な要素となります。
+						</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-12">
+					<h1 class="main-chalkboard-title"><span id="chalkboard-title"></span></h1>
+				</div>
+			</div>
+			<div class="row">
+			                <div class="col-md-6 animate-box" data-animate-effect="fadeInUp">
+			                    <div class="info-card">
+			                        <div class="card-header-section">
+			                            <div class="icon-wrapper gradient-blue">
+			                                <i class="fas fa-clock"></i>
+		                            </div>
+		                            <h3 class="card-title">コアタイム</h3>
+		                        </div>
+		                        <div class="card-content-section">
+		                            <p class="card-description">当研究室では、コアタイムは設けていません。(研究室が快適すぎてよく来ている学生が多いです)生活スタイルに合わせて研究を進めることができます。週1の進捗報告会と輪講会（ゼミ）は必須参加です。</p>
+		                        </div>
+		                    </div>
+		                </div>				<div class="col-md-6 animate-box" data-animate-effect="fadeInUp">
+					<div class="info-card">
+						<div class="card-header-section">
+							<div class="icon-wrapper gradient-blue">
+								<i class="fas fa-users"></i>
+							</div>
+							<h3 class="card-title">研究室の雰囲気</h3>
+						</div>
+						<div class="card-content-section">
+							<p class="card-description">学年の垣根を越えて仲が良く、和気あいあいとした雰囲気です。研究で行き詰まった際には学生同士で助け合ったり、先生に気軽に相談できる環境です。研究室のメンバー同士でランチに行ったり、定期的に交流イベントを開催したりして、良好なコミュニケーションを大切にしています。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 animate-box" data-animate-effect="fadeInUp">
+					<div class="info-card">
+					<div class="card-header-section">
+						<div class="icon-wrapper gradient-blue">
+							<i class="fas fa-globe-americas"></i>
+						</div>
+						<h3 class="card-title">学会について</h3>
+					</div>
+					<div class="card-content-section">
+						<p class="card-description">当研究室では、年に数回、国内・国際学会に参加し、研究成果を発表します。学部生（B3）の段階から学会発表を目指すことも可能であり、実際に現在のB3がその目標に向けて研究を進めています。<br>発表準備は、論文作成からプレゼン指導まで、教員や先輩がマンツーマンで丁寧にサポートしますので、安心してチャレンジできます。</p>
+					</div>
+				</div>
+		</div>
+		<div class="col-md-6 animate-box" data-animate-effect="fadeInUp">
+				<div class="info-card">
+					<div class="card-header-section">
+						<div class="icon-wrapper gradient-blue">
+							<i class="fas fa-stream"></i>
+						</div>
+						<h3 class="card-title">配属後の流れ</h3>
+					</div>
+					<div class="card-content-section">
+                        <p class="card-description">配属後は、まず研究に必要な基礎力を固めます。無線通信分野の英語教科書を用いた輪講を毎週実施し、専門知識とプレゼン力を習得。同時にプログラミング基礎も習得します。基礎が整い次第、先生と相談して専門テーマを決め、本格的な研究を開始。週1回の進捗報告会で、建設的な議論を通して研究を着実に発展させていきます。</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 animate-box" data-animate-effect="fadeInUp">
+				<div class="info-card">
+					<div class="card-header-section">
+						<div class="icon-wrapper gradient-blue">
+							<i class="fas fa-briefcase"></i>
+						</div>
+						<h3 class="card-title">バイト</h3>
+					</div>
+					<div class="card-content-section">
+						<p class="card-description">気分転換にバイトをしている学生が多いです。平均勤務日数は週2回程度です。サークルや部活などに熱中する学生もいます。<br> e.g. 塾講師、バーテンダー、模試添削</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 animate-box" data-animate-effect="fadeInUp">
+				<div class="info-card">
+					<div class="card-header-section">
+						<div class="icon-wrapper gradient-blue">
+							<i class="fas fa-laptop"></i>
+						</div>
+						<h3 class="card-title">設備・環境</h3>
+					</div>
+					<div class="card-content-section">
+						<p class="card-description">研究室には、各学生専用の昇降デスク(立ってパソコン作業できて神、健康的！)と高スペックPC、モニター、マウス、キーボードが整っています。(全部最上級スペックで使いこなせているかは謎。) その他、ipadやノートPCも個人の利用に合わせて用意しています。</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></section>
+
+<!-- KOJIMA LABでの1日 セクション -->
+<section class="daily-schedule-section">
+    <div class="container">
+        <h2 class="section-title">KOJIMA LABでの1日</h2>
+        <p class="section-lead">研究室での典型的な1日の流れをご紹介します。</p>
+        
+        <div class="timeline-schedule">
+            <!-- 10:00 到着 -->
+            <div class="schedule-item animate-box" data-animate-effect="fadeInUp">
+                <div class="schedule-time">
+                    <div class="time-badge">10:00</div>
+                </div>
+                <div class="schedule-content">
+                    <div class="schedule-icon-wrapper morning">
+                        <i class="fas fa-door-open"></i>
+                    </div>
+                    <h3 class="schedule-title">研究室到着</h3>
+                    <p class="schedule-description">各自のペースで研究室に到着。指紋で部屋の鍵を開け、今日のタスクを確認します。8階の窓から朝の景色を眺めるのも楽しみの一つです。</p>
+                </div>
+            </div>
+
+            <!-- 11:00-12:00 輪講会 -->
+            <div class="schedule-item animate-box" data-animate-effect="fadeInUp">
+                <div class="schedule-time">
+                    <div class="time-badge">11:00</div>
+                </div>
+                <div class="schedule-content">
+                    <div class="schedule-icon-wrapper seminar">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="schedule-title">輪講会</h3>
+                    <p class="schedule-description">英語の教科書を用いた輪講を実施。プレゼンテーションと質疑応答を通じて、専門知識とコミュニケーション力を磨きます。</p>
+                </div>
+            </div>
+
+            <!-- 12:00-13:00 昼休憩 -->
+            <div class="schedule-item animate-box" data-animate-effect="fadeInUp">
+                <div class="schedule-time">
+                    <div class="time-badge">12:00</div>
+                </div>
+                <div class="schedule-content">
+                    <div class="schedule-icon-wrapper lunch">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="schedule-title">ランチタイム</h3>
+                    <p class="schedule-description">メンバーと一緒に学食へ行く日、お弁当やコンビニで済ませる日など様々です。研究室では冷蔵庫、お湯、電子レンジ等が使えます。ご飯を食べてリフレッシュ！研究室にあるふかふかソファーでお昼寝もできます。</p>
+                </div>
+            </div>
+
+            <!-- 13:00-16:00 研究活動 -->
+            <div class="schedule-item animate-box" data-animate-effect="fadeInUp">
+                <div class="schedule-time">
+                    <div class="time-badge">13:00</div>
+                </div>
+                <div class="schedule-content">
+                    <div class="schedule-icon-wrapper research">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="schedule-title">研究活動</h3>
+                    <p class="schedule-description">各自の研究テーマに取り組みます。プログラミング、シミュレーション、論文執筆など。困ったときは気軽に相談できる環境です。集中タイムとおしゃべりタイムのメリハリはしっかりと。</p>
+                </div>
+            </div>
+
+            <!-- 16:00 帰宅 -->
+            <div class="schedule-item animate-box" data-animate-effect="fadeInUp">
+                <div class="schedule-time">
+                    <div class="time-badge">16:00</div>
+                </div>
+                <div class="schedule-content">
+                    <div class="schedule-icon-wrapper evening">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="schedule-title">帰宅</h3>
+                    <p class="schedule-description">1日の作業を終えて帰宅。え？もうこんな時間？となることも少なくありません。(研究終わりに麻辣湯行きたい方募集中です。研究室の85インチTVで映画鑑賞、マリカーとかもいいな～)</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="schedule-note">
+            <i class="fas fa-info-circle"></i>
+            <p>※これは一例です。コアタイムがないため、生活スタイルに合わせて柔軟に研究を進めることができます。若干夜型割合高めです。ちなみに先生はall-time型(?)で誰よりも熱心です。</p>
+        </div>
+    </div>
+</section>
+
+<section class="activity-report-section" id="activity-report">
+    <h2 class="section-title">研究室の活動風景</h2>
+    <p class="section-lead">研究活動のほか、年間を通じて行われるイベントや日常の様子を紹介します。</p>
+
+    <div class="report-grid">
+        <a href="welcome-party-report.html" class="report-card">
+            <span class="card-date-badge">2025.10.07</span>
+            <div class="card-content">
+                <div class="card-meta">
+                    <span class="activity-category">イベント報告</span>
+                </div>
+                <h3 class="card-title">新入生歓迎会を開催しました</h3>
+                <p class="card-summary">新メンバーを迎え、親睦を深める楽しい会となりました。研究室の雰囲気を伝える写真とともにお届けします。</p>
+            </div>
+            <div class="card-image-wrapper">
+                <img src="images/events/welcome.jpg" alt="新入生歓迎会の様子" class="card-image">
+                <div class="image-overlay">
+                    <div class="overlay-content">
+                        <i class="fas fa-eye"></i>
+                        <span>詳細を見る</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+        
+        </div>
+</section>
+
+	<footer id="fh5co-footer" class="bg-dark" role="contentinfo">
+		<div class="container">
+	  
+			<div class="row row-pb-md">
+	  
+				<!-- 関連リンク：1 カラム -->
+				<div class="col-md-4 col-sm-6 fh5co-widget">
+			  		<h3 class="footer-title">関連リンク</h3>
+			  		<ul class="fh5co-footer-links">
+						<li><a href="https://www.ynu.ac.jp/" target="_blank">横浜国立大学 公式サイト</a></li>
+						<li><a href="https://www.fse.ynu.ac.jp/" target="_blank">横浜国立大学 大学院 工学研究院</a></li>
+						<li><a href="https://er-web.ynu.ac.jp/html/KOJIMA_Shun/ja.html" target="_blank">研究者総覧</a></li>
+			  		</ul>
+				</div>
+	  
+				<!-- 追加で列を並べたいときは ↓ をコピーして col‑md‑2/3 等に変更 -->
+				<!--
+				<div class="col-md-4 col-sm-6 fh5co-widget">
+			  		<h3 class="footer-title">学会リンク</h3>
+			  		<ul class="fh5co-footer-links">
+						<li><a href="#">リンク A</a></li>
+						…
+			  		</ul>
+				</div>
+				-->
+	  
+		  	</div><!-- /.row -->
+	  
+		  	<div class="row copyright">
+				<div class="col-md-12 text-center">
+			  	<small>&copy; 2025 Kojima Lab. All Rights Reserved.</small>
+				  <small class="block">Designed by <a href="http://gettemplates.co/" 
+					target="_blank">GetTemplates.co</a> </small>
+				</div>
+		  	</div>
+	  
+			</div><!-- /.container -->
+	</footer>
+
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+	
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- countTo -->
+	<script src="js/jquery.countTo.js"></script>
+	<!-- Magnific Popup -->
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/magnific-popup-options.js"></script>
+	<!-- Stellar -->
+	<script src="js/jquery.stellar.min.js"></script>
+	<!-- Main -->
+	<script src="js/main.js"></script>
+	
+
+	<!-- particles.js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
+	<script>
+		particlesJS('particles-js', {
+		  "particles": {
+		    "number": {
+		      "value": 80,
+		      "density": {
+		        "enable": true,
+		        "value_area": 800
+		      }
+		    },
+		    "color": {"value": "#ffffff"},
+		    "shape": {"type": "circle"},
+		    "opacity": {
+		      "value": 0.5,
+		      "random": true
+		    },
+		    "size": {
+		      "value": 3,
+		      "random": true
+		    },
+		    "line_linked": {
+		      "enable": true,
+		      "distance": 150,
+		      "color": "#ffffff",
+		      "opacity": 0.4,
+		      "width": 1
+		    },
+		    "move": {
+		      "enable": true,
+		      "speed": 2,
+		      "direction": "none",
+		      "random": false,
+		      "straight": false,
+		      "out_mode": "out",
+		      "bounce": false,
+		    }
+		  },
+		  "interactivity": {
+		    "detect_on": "canvas",
+		    "events": {
+		      "onhover": {
+		        "enable": true,
+		        "mode": "repulse"
+		      },
+		      "onclick": {"enable": false},
+		      "resize": true
+		    },
+		    "modes": {
+		      "repulse": {"distance": 100, "duration": 0.4}
+		    }
+		  },
+		  "retina_detect": true
+		});
+	</script>
+
+	<!-- Removed paper-note hover script -->
+
+	<!-- Typed.js -->
+	<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+	<script>
+		var typed_trigger = function() {
+			$('#fh5co-about').waypoint( function( direction ) {
+				if( direction === 'down' && !$(this.element).hasClass('typed-animated') ) {
+					
+					setTimeout(function(){
+						var options = {
+							strings: ['KOJIMA LAB'],
+							typeSpeed: 100,
+							showCursor: true,
+							cursorChar: '▋',
+							loop: false,
+							onComplete: function(self) {
+								setTimeout(function() {
+									self.cursor.remove();
+								}, 1000);
+							}
+						};
+						var typed = new Typed('#chalkboard-title', options);
+					}, 500); // Delay to start after section appears
+
+					$(this.element).addClass('typed-animated');
+				}
+			} , { offset: '85%' } );
+		};
+		$(function(){
+			typed_trigger();
+		});
+	</script>
+
+	<!-- Smooth scroll to hash on page load -->
+	<script>
+		$(function() {
+			// ページ読み込み時にハッシュがある場合、そのセクションにスムーズスクロール
+			if (window.location.hash) {
+				var hash = window.location.hash;
+				// ページの読み込み完了後に少し遅延させてスクロール
+				setTimeout(function() {
+					var target = $(hash);
+					if (target.length) {
+						$('html, body').animate({
+							scrollTop: target.offset().top - 80 // ナビゲーションバーの高さ分オフセット
+						}, 200);
+					}
+				}, 10);
+			}
+		});
+	</script>
+
+	</body>
+</html>
