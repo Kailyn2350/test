@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cache Management System - Test Console</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            margin: 5px 0;
+            background: white;
+            border-radius: 6px;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .info-value {
+            color: #667eea;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .status.ok {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status.warning {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 5px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn.danger {
+            background: #dc3545;
+        }
+        
+        .btn.danger:hover {
+            background: #c82333;
+        }
+        
+        .console {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            max-height: 300px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        
+        .console-line {
+            margin: 5px 0;
+            padding: 5px;
+            border-left: 3px solid transparent;
+        }
+        
+        .console-line.success {
+            border-left-color: #4caf50;
+        }
+        
+        .console-line.warning {
+            border-left-color: #ff9800;
+        }
+        
+        .console-line.error {
+            border-left-color: #f44336;
+        }
+        
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛠️ Cache Management System</h1>
+            <p>テスト・デバッグコンソール</p>
+        </div>
+        
+        <div class="content">
+            <!-- 현재 상태 -->
+            <div class="section">
+                <h2>📊 Current Status</h2>
+                <div class="info-row">
+                    <span class="info-label">Current Version:</span>
+                    <span class="info-value" id="currentVersion">-</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Stored Version:</span>
+                    <span class="info-value" id="storedVersion">-</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Cache Timestamp:</span>
+                    <span class="info-value" id="cacheTimestamp">-</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Session Status:</span>
+                    <span class="info-value" id="sessionStatus">-</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">System Status:</span>
+                    <span id="systemStatus">-</span>
+                </div>
+            </div>
+            
+            <!-- 동작 -->
+            <div class="section">
+                <h2>🎮 Actions</h2>
+                <div class="button-group">
+                    <button class="btn" onclick="checkVersion()">Check Version</button>
+                    <button class="btn" onclick="updateVersion()">Update Version</button>
+                    <button class="btn" onclick="simulateUpdate()">Simulate Update</button>
+                    <button class="btn danger" onclick="clearAllCache()">Clear All Cache</button>
+                    <button class="btn danger" onclick="resetSystem()">Reset System</button>
+                </div>
+            </div>
+            
+            <!-- 콘솔 출력 -->
+            <div class="section">
+                <h2>💻 Console Output</h2>
+                <div class="console" id="console">
+                    <div class="console-line">System initialized. Ready for testing...</div>
+                </div>
+            </div>
+            
+            <!-- 도움말 -->
+            <div class="section">
+                <h2>ℹ️ How to Use</h2>
+                <ul style="line-height: 1.8; color: #555;">
+                    <li><strong>Check Version:</strong> 현재 버전 상태를 확인합니다</li>
+                    <li><strong>Update Version:</strong> localStorage의 버전을 업데이트합니다</li>
+                    <li><strong>Simulate Update:</strong> 버전 변경을 시뮬레이션합니다</li>
+                    <li><strong>Clear All Cache:</strong> 모든 캐시를 삭제합니다</li>
+                    <li><strong>Reset System:</strong> 시스템을 초기 상태로 되돌립니다</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 콘솔 로그 함수
+        function log(message, type = 'info') {
+            const console = document.getElementById('console');
+            const line = document.createElement('div');
+            line.className = 'console-line ' + type;
+            const timestamp = new Date().toLocaleTimeString('ja-JP');
+            line.textContent = `[${timestamp}] ${message}`;
+            console.appendChild(line);
+            console.scrollTop = console.scrollHeight;
+        }
+        
+        // 상태 업데이트
+        function updateStatus() {
+            const currentVersion = window.SITE_VERSION || 'Not loaded';
+            const storedVersion = localStorage.getItem('site_version') || 'None';
+            const cacheTimestamp = localStorage.getItem('cache_timestamp') || 'None';
+            const hasVisited = sessionStorage.getItem('hasVisited') || 'No';
+            
+            document.getElementById('currentVersion').textContent = currentVersion;
+            document.getElementById('storedVersion').textContent = storedVersion;
+            document.getElementById('cacheTimestamp').textContent = 
+                cacheTimestamp !== 'None' ? new Date(parseInt(cacheTimestamp)).toLocaleString('ja-JP') : 'None';
+            document.getElementById('sessionStatus').textContent = hasVisited;
+            
+            // 시스템 상태 판단
+            const statusEl = document.getElementById('systemStatus');
+            if (currentVersion === storedVersion && currentVersion !== 'Not loaded') {
+                statusEl.innerHTML = '<span class="status ok">✓ Synced</span>';
+            } else if (currentVersion === 'Not loaded') {
+                statusEl.innerHTML = '<span class="status warning">⚠ Not Loaded</span>';
+            } else {
+                statusEl.innerHTML = '<span class="status error">✗ Out of Sync</span>';
+            }
+            
+            log('Status updated', 'success');
+        }
+        
+        // 버전 체크
+        function checkVersion() {
+            log('Checking version...', 'info');
+            
+            if (window.VersionManager && typeof window.VersionManager.check === 'function') {
+                const isValid = window.VersionManager.check();
+                log(`Version check result: ${isValid ? 'Valid' : 'Invalid'}`, isValid ? 'success' : 'warning');
+            } else {
+                log('VersionManager not found. Load from index.html', 'warning');
+            }
+            
+            updateStatus();
+        }
+        
+        // 버전 업데이트
+        function updateVersion() {
+            log('Updating version...', 'info');
+            
+            if (window.VersionManager && typeof window.VersionManager.update === 'function') {
+                window.VersionManager.update();
+                log('Version updated successfully', 'success');
+            } else {
+                const version = window.SITE_VERSION || '1.0.0';
+                localStorage.setItem('site_version', version);
+                localStorage.setItem('cache_timestamp', Date.now().toString());
+                log(`Version manually set to ${version}`, 'success');
+            }
+            
+            updateStatus();
+        }
+        
+        // 업데이트 시뮬레이션
+        function simulateUpdate() {
+            log('Simulating version update...', 'info');
+            
+            const oldVersion = localStorage.getItem('site_version') || '1.0.0';
+            const parts = oldVersion.split('.');
+            parts[2] = (parseInt(parts[2]) + 1).toString();
+            const newVersion = parts.join('.');
+            
+            localStorage.setItem('site_version', newVersion);
+            log(`Simulated update: ${oldVersion} → ${newVersion}`, 'success');
+            log('Refresh the page to see the effect', 'warning');
+            
+            updateStatus();
+        }
+        
+        // 캐시 삭제
+        function clearAllCache() {
+            log('Clearing all cache...', 'info');
+            
+            if (window.VersionManager && typeof window.VersionManager.clearCache === 'function') {
+                window.VersionManager.clearCache();
+            }
+            
+            log('localStorage and sessionStorage cleared', 'success');
+            
+            updateStatus();
+        }
+        
+        // 시스템 리셋
+        function resetSystem() {
+            if (!confirm('Really reset the system? All cache and settings will be cleared.')) {
+                return;
+            }
+            
+            log('Resetting system...', 'warning');
+            
+            localStorage.clear();
+            sessionStorage.clear();
+            
+            log('System reset complete', 'success');
+            log('Page will reload in 2 seconds...', 'info');
+            
+            setTimeout(() => {
+                window.location.reload();
+            }, 2000);
+        }
+        
+        // 초기화
+        window.addEventListener('load', () => {
+            log('Page loaded', 'success');
+            updateStatus();
+        });
+        
+        // 주기적 상태 업데이트
+        setInterval(updateStatus, 5000);
+    </script>
+</body>
+</html>

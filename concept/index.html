@@ -97,6 +97,9 @@
 		}
 	</style>
 	
+	<!-- Version Manager - キャッシュ管理システム (最優先ロード) -->
+	<script src="js/version-manager.js"></script>
+	
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -106,7 +109,7 @@
 	
 	<!-- Polyfills for older browsers (IE11, old Edge, old Android) -->
 	<script>
-		// Object-fit polyfill for IE11
+		// IE11用のObject-fit polyfill
 		if (!('objectFit' in document.documentElement.style)) {
 			document.addEventListener('DOMContentLoaded', function() {
 				var images = document.querySelectorAll('img[style*="object-fit"]');
@@ -121,12 +124,12 @@
 			});
 		}
 		
-		// forEach polyfill for IE11 NodeList
+		// IE11 NodeList用のforEach polyfill
 		if (window.NodeList && !NodeList.prototype.forEach) {
 			NodeList.prototype.forEach = Array.prototype.forEach;
 		}
 		
-		// classList polyfill for IE9/10
+		// IE9/10用のclassList polyfill
 		if (!('classList' in document.documentElement)) {
 			Object.defineProperty(HTMLElement.prototype, 'classList', {
 				get: function() {
@@ -155,7 +158,7 @@
 			});
 		}
 		
-		// CustomEvent polyfill for IE11
+		// IE11用のCustomEvent polyfill
 		if (typeof window.CustomEvent !== "function") {
 			function CustomEvent(event, params) {
 				params = params || { bubbles: false, cancelable: false, detail: null };
@@ -847,13 +850,33 @@
 	<!-- Loading Screen Animation -->
 	<script>
 		(function() {
-			// IE11 対応のため、const → var, arrow function 削除
-			// セッションチェック - 初回訪問か確認
+			// IE11対応のため、const → var、arrow function削除
+			
+			// バージョン確認 - バージョンが異なる場合はキャッシュ不一致の可能性があるためローディング画面を表示
+			var currentVersion = window.SITE_VERSION || '1.0.0';
+			var storedVersion = localStorage.getItem('site_version');
 			var hasVisited = sessionStorage.getItem('hasVisited');
+			
 			var loadingScreen = document.getElementById('loading-screen');
 			
+			// バージョンが異なる場合は必ずローディング画面を表示 (キャッシュ更新中)
+			if (storedVersion && storedVersion !== currentVersion) {
+				console.log('🔄 Version changed - showing loading screen');
+				console.log('📦 Old version:', storedVersion, '→ New version:', currentVersion);
+				hasVisited = null; // ローディング画面を強制表示
+				sessionStorage.removeItem('hasVisited'); // セッション初期化
+				
+				// ローディング状態メッセージを更新
+				setTimeout(function() {
+					var statusEl = document.getElementById('loadingStatus');
+					if (statusEl) {
+						statusEl.textContent = 'Updating to latest version...';
+					}
+				}, 500);
+			}
+			
 			// すでに訪問したことがあればローディング画面をDOMから即座に削除
-			if (hasVisited) {
+			if (hasVisited && storedVersion === currentVersion) {
 				if (loadingScreen) {
 					if (loadingScreen.remove) {
 						loadingScreen.remove();
@@ -959,12 +982,12 @@
 						}, 500);
 					}, 300);
 				} else {
-					// 계속 업데이트
+					// 継続して更新
 					requestAnimationFrame(smoothUpdate);
 				}
 			}
 			
-			// 進捗を定期的に増加させる (IE11互換: const → var, arrow function 削除)
+			// 進捗を定期的に増加させる (IE11互換: const → var、arrow function削除)
 			var loadingInterval = setInterval(function() {
 				targetProgress += Math.random() * 8 + 4; // 4〜12%ずつ増加
 				
