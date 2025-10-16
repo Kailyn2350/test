@@ -52,7 +52,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	
 	<style>
-		/* IE11/구형 브라우저 fallback */
+		/* IE11/旧ブラウザ用フォールバック */
 		.research-topic-item.active {
 			opacity: 1 !important;
 			filter: alpha(opacity=100); /* IE8/9 fallback */
@@ -64,7 +64,7 @@
 		}
 		
 		.signal-dot.active {
-			background: #1e90ff; /* IE9 fallback - gradient 미지원 시 단색 */
+			background: #1e90ff; /* IE9フォールバック - グラデーション未対応時は単色 */
 			background: -ms-linear-gradient(to bottom, #1e90ff, #007acc); /* IE10 */
 			background: linear-gradient(to bottom, #1e90ff, #007acc) !important;
 			box-shadow: 0 0 0 4px rgba(30, 144, 255, 0.2) !important;
@@ -83,16 +83,16 @@
 			display: flex;
 		}
 		
-		/* object-fit이 없는 구형 브라우저용 */
+		/* object-fitに対応しない旧ブラウザ用 */
 		.background-gif {
-			/* IE에서는 polyfill이 background-image로 대체 */
+			/* IEではpolyfillがbackground-imageで代替される */
 			font-family: 'object-fit: cover;'; /* IE11 hack */
 		}
 		
 		/* IE11: CSS Grid fallback */
 		@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 			.fh5co-cover {
-				background-attachment: scroll !important; /* parallax 비활성화 */
+				background-attachment: scroll !important; /* パララックス無効化 */
 			}
 		}
 	</style>
@@ -167,14 +167,14 @@
 		}
 	</script>
 	
-	<!-- 타이핑 텍스트 즉시 초기화 (페이지 로드 즉시 실행) -->
+	<!-- タイピングテキストを即時初期化（ページ読み込み時に即実行） -->
 	<script>
-		// 페이지 로드 즉시 실행 - DOMContentLoaded를 기다리지 않음
+		// ページ読み込み時に即実行 - DOMContentLoadedを待たない
 		(function() {
-			// 타이핑 텍스트 초기화 함수
+			// タイピングテキスト初期化関数
 			function clearTypingTexts() {
 				var typingTexts = document.querySelectorAll('.typing-text');
-				// IE11 호환: forEach 대신 for loop
+				// IE11互換: forEachの代わりにforループを使用
 				for (var i = 0; i < typingTexts.length; i++) {
 					typingTexts[i].textContent = '';
 					typingTexts[i].innerHTML = '';
@@ -184,14 +184,14 @@
 				}
 			}
 			
-			// 즉시 실행
+			// 即時実行
 			if (document.readyState === 'loading') {
 				document.addEventListener('DOMContentLoaded', clearTypingTexts);
 			} else {
 				clearTypingTexts();
 			}
 			
-			// 추가 안전장치: 100ms 후 다시 한번 실행
+			// 追加の保険: 100ms後にもう一度実行
 			setTimeout(clearTypingTexts, 100);
 		})();
 	</script>
@@ -847,12 +847,12 @@
 	<!-- Loading Screen Animation -->
 	<script>
 		(function() {
-			// IE11 호환: const → var, arrow function 제거
-			// 세션 체크 - 처음 방문인지 확인
+			// IE11 対応のため、const → var, arrow function 削除
+			// セッションチェック - 初回訪問か確認
 			var hasVisited = sessionStorage.getItem('hasVisited');
 			var loadingScreen = document.getElementById('loading-screen');
 			
-			// 이미 방문한 적이 있으면 로딩 화면 DOM에서 즉시 제거
+			// すでに訪問したことがあればローディング画面をDOMから即座に削除
 			if (hasVisited) {
 				if (loadingScreen) {
 					if (loadingScreen.remove) {
@@ -864,7 +864,7 @@
 				return;
 			}
 			
-			// 로딩 화면 표시 (hasVisited는 나중에 설정)
+			// ローディング画面を表示
 			loadingScreen.classList.add('show');
 			
 			var loadingBar = document.getElementById('loadingBar');
@@ -872,7 +872,7 @@
 			var loadingStatus = document.getElementById('loadingStatus');
 			var particlesContainer = document.getElementById('particles');
 			
-			// 파티클 생성
+				// パーティクル生成
 			function createParticles() {
 				var particleCount = 50;
 				for (var i = 0; i < particleCount; i++) {
@@ -887,7 +887,7 @@
 			
 			createParticles();
 			
-			// 로딩 상태 메시지 (IE11 호환: const → var)
+			// ロード状態メッセージ (IE11互換: const → var)
 			var statusMessages = [
 				'Initializing...',
 				'Loading resources...',
@@ -903,39 +903,39 @@
 			var displayProgress = 0;
 			var statusIndex = 0;
 			
-			// 부드러운 숫자 증가를 위한 함수
+			// 数値をスムーズに増加させる関数
 			function smoothUpdate() {
-				// 표시되는 진행률을 목표 진행률로 부드럽게 이동
+				// 表示される進捗を目標進捗にスムーズに追従させる
 				var diff = targetProgress - displayProgress;
-				displayProgress += diff * 0.15; // 부드러운 따라가기 효과
+				displayProgress += diff * 0.15; 
 				
-				// 반올림하여 표시
+				// 四捨五入して表示
 				var roundedProgress = Math.round(displayProgress);
 				loadingBar.style.width = displayProgress + '%';
 				loadingPercent.textContent = roundedProgress + '%';
 				
-				// 상태 메시지 업데이트
+				// ステータスメッセージを更新
 				var newStatusIndex = Math.floor((displayProgress / 100) * (statusMessages.length - 2));
 				if (newStatusIndex !== statusIndex && newStatusIndex < statusMessages.length - 1) {
 					statusIndex = newStatusIndex;
 					loadingStatus.textContent = statusMessages[statusIndex];
 				}
 				
-				// 100%에 거의 도달했으면 완료 처리
+				// 100%にほぼ到達したら完了処理
 				if (displayProgress >= 99.5 && targetProgress >= 100) {
 					displayProgress = 100;
 					loadingBar.style.width = '100%';
 					loadingPercent.textContent = '100%';
 					
-					// 로딩 완료
+					// ロード完了
 					setTimeout(function() {
 						loadingStatus.textContent = statusMessages[statusMessages.length - 1];
 						
-						// 페이드아웃
+						// フェードアウト
 						setTimeout(function() {
 							loadingScreen.classList.add('fade-out');
 							
-							// DOM에서 완전히 제거 (IE11 호환)
+							// DOMから完全に削除 (IE11互換)
 							setTimeout(function() {
 								if (loadingScreen.remove) {
 									loadingScreen.remove();
@@ -943,10 +943,10 @@
 									loadingScreen.parentNode.removeChild(loadingScreen);
 								}
 								
-								// 로딩 완료 후 방문 기록 저장
+								// ロード完了後に訪問記録を保存
 								sessionStorage.setItem('hasVisited', 'true');
 								
-								// 로딩 화면 완전히 제거 후 타이핑 시작 이벤트 발생 (IE11 호환)
+								// カスタムイベントを発火して他のスクリプトに通知
 								var event;
 								if (typeof Event === 'function') {
 									event = new Event('loadingComplete');
@@ -964,29 +964,29 @@
 				}
 			}
 			
-			// 목표 진행률 증가 (IE11 호환: const → var)
+			// 進捗を定期的に増加させる (IE11互換: const → var, arrow function 削除)
 			var loadingInterval = setInterval(function() {
-				targetProgress += Math.random() * 8 + 4; // 4~12씩 증가 (더 빠르게)
+				targetProgress += Math.random() * 8 + 4; // 4〜12%ずつ増加
 				
 				if (targetProgress >= 100) {
 					targetProgress = 100;
 					clearInterval(loadingInterval);
 				}
-			}, 120); // 150ms → 120ms (더 빠르게)
+			}, 120); // 120msごとに更新
 			
-			// 부드러운 업데이트 시작
+			// アニメーション開始
 			requestAnimationFrame(smoothUpdate);
 			
-			// 최소 로딩 시간 보장 (2.5초로 단축)
+			// 最低ローディング時間保証 (2.5秒に短縮)
 			setTimeout(function() {
 				if (targetProgress < 100) {
 					targetProgress = 100;
 				}
 			}, 2500);
 			
-			// 페이지 완전 로드 시
+			// ページ完全ロード時
 			window.addEventListener('load', function() {
-				// 이미 로딩이 완료되지 않았다면 진행률을 100%로
+				// すでにロードが完了していない場合、進捗を100%に
 				if (progress < 100) {
 					progress = 100;
 					loadingBar.style.width = '100%';

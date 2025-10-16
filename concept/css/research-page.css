@@ -1,6 +1,6 @@
 /* Styles for horizontal display of research topics on research.html */
 
-/* 배경색을 흰색으로 설정 */
+/* 背景色を白に設定 */
 .research-scroll-section {
   background: #ffffff !important;
   padding: 60px 0 !important;
@@ -27,21 +27,21 @@
   scroll-snap-type: none !important;
   padding: 20px 0px !important;
   width: 100% !important;
-  gap: 30px !important; /* 카드 사이 간격 추가 */
+  gap: 30px !important; /* カード間の間隔を追加 */
 }
 
 .research-topic-item {
   flex: 1 !important;
   min-width: 360px !important;
   max-width: 420px !important;
-  margin: 0 !important; /* 네거티브 마진 제거 */
+  margin: 0 !important; /* ネガティブマージンを削除 */
   height: auto !important;
   min-height: unset !important;
   scroll-snap-align: none !important;
   opacity: 1 !important;
   transform: none !important;
   transition: none !important;
-  padding: 0 15px !important; /* 내부 패딩 추가 */
+  padding: 0 15px !important; /* 内部パディングを追加 */
 }
 
 /* Ensure active state doesn't re-introduce opacity/transform */
@@ -95,7 +95,7 @@
   font-size: 1.5em !important;
 }
 
-/* 모바일 반응형 */
+/* モバイル対応 */
 @media (max-width: 1024px) {
   .research-topics-panel {
     flex-direction: column !important;

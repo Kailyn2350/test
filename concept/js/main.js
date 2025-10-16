@@ -136,7 +136,7 @@
 		var i = 0;
 		$('.animate-box').waypoint( function( direction ) {
 
-			// 이미 애니메이션이 적용된 요소는 스킵
+			// console.log('Waypoint triggered for animate-box, direction:', direction);
 			if( direction === 'down' && !$(this.element).hasClass('animated-fast') ) {
 				
 				i++;
@@ -260,7 +260,7 @@
 
 	// タイピングアニメーション効果
 	var typewriterEffect = function() {
-		// 로딩 화면이 있는 경우 완료될 때까지 대기
+		// ローディング画面がある場合、完了するまで待機
 		var loadingScreen = document.getElementById('loading-screen');
 		var hasVisited = sessionStorage.getItem('hasVisited');
 		
@@ -271,21 +271,21 @@
 		
 		var shouldWaitForLoading = loadingScreen && !hasVisited;
 		
-		// 로딩 화면이 있으면 아예 함수를 여기서 종료하고 이벤트만 등록
+		// ローディング画面がある場合、アニメーションをここで停止し、イベントを待機
 		if (shouldWaitForLoading) {
 			console.log('🛑 Loading screen detected - STOPPING HERE and waiting for event');
 			window.addEventListener('loadingComplete', function() {
 				console.log('📢 loadingComplete event received - calling typewriterEffect again');
-				typewriterEffect(); // 로딩 완료 후 다시 실행
-			}, { once: true }); // once: true로 한 번만 실행되도록
-			return; // 여기서 함수 종료
+				typewriterEffect(); // ロード完了後に再実行
+			}, { once: true }); // once: true で一度だけ実行
+			return; // ここで関数終了
 		}
 		
 		console.log('✅ No loading screen or already visited - proceeding with typewriter');
 		
 		var titleElement = document.querySelector('#main-title');
 		
-		// 즉시 모든 타이핑 텍스트 초기화
+		// すぐにすべてのタイピングテキストを初期化
 		var allTypingTexts = document.querySelectorAll('.typing-text');
 		allTypingTexts.forEach(function(el) {
 			el.textContent = '';
@@ -423,17 +423,17 @@
 			}
 		}
 
-		// 로딩 화면이 없는 경우 즉시 시작
+		// ローディング画面がない場合、すぐに開始
 		console.log('✅ No loading screen, starting typewriter immediately');
 		setTimeout(function() {
 			// 一度 すべて の カーソル を 確実 に 隠す
 			initializeCursors();
-			// 타이핑 시작 전 텍스트 다시 한번 초기化
+			// タイピング開始前にテキストを再度初期化
 			allTypingTexts.forEach(function(el) {
 				el.textContent = '';
 			});
 			typeWriter();
-		}, 50); // 500ms → 50ms로 단축
+		}, 50); // 500ms → 50msに短縮
 	};
 
 	// マウス追従効果
@@ -491,7 +491,7 @@
 			// パーティクルを配列に追加
 			particles.push(particle);
 
-			// 1초 후에 パーティクルを削除 (3초 → 1초로 단축)
+			// 1秒後にパーティクルを削除 (3秒 → 1秒に短縮)
 			setTimeout(function() {
 				if (particle.parentNode) {
 					particle.parentNode.removeChild(particle);

@@ -18,7 +18,7 @@ Copyright (c) 2015 Daniel Eden
   animation-duration: .5s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  /* 성능 최적화 */
+  /* パフォーマンス最適化 */
   will-change: transform, opacity;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;

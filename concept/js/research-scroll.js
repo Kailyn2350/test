@@ -1,23 +1,23 @@
 /**
  * Research Theme Section - Enhanced Scroll Animation
- * WiFi 이미지와 연구 테마 카드의 동적 스크롤 효과
+ * WiFi イメージの切り替えと研究テーマカードの表示
  */
 
 (function() {
     'use strict';
 
-    // DOM 요소 - 나중에 초기화
+    // DOM 要素
     let wifiImages;
     let signalDots;
     let researchTopics;
     let researchSection;
     let topicsPanel;
 
-    // 현재 활성화된 단계
-    let currentStep = 3; // wifi3부터 시작
+    // 状態変数
+    let currentStep = 3; // wifi3から開始
 
     /**
-     * WiFi 이미지 전환
+     * WiFi イメージの切り替え
      */
     function switchWifiImage(step) {
         console.log('Switching WiFi to level:', step);
@@ -32,7 +32,7 @@
             }
         });
 
-        // 시그널 도트 업데이트
+        // シグナルドットの更新
         signalDots.forEach(dot => {
             const signalLevel = parseInt(dot.dataset.signal);
             if (signalLevel === step) {
@@ -46,7 +46,7 @@
     }
 
     /**
-     * 연구 테마 카드 표시
+     * 研究テーマカードを表示
      */
     function showResearchTopic(index) {
         researchTopics.forEach((topic, i) => {
@@ -59,7 +59,7 @@
     }
 
     /**
-     * 스크롤 이벤트 핸들러 (오른쪽 패널용)
+     * スクロールイベントハンドラー (右パネル用)
      */
     function handlePanelScroll() {
         if (!topicsPanel) {
@@ -67,17 +67,17 @@
             return;
         }
 
-        // 모바일 디바이스인지 확인
+        // モバイルかどうか判定
         const isMobile = window.innerWidth <= 1024;
         
         let clampedIndex = 0;
         
         if (isMobile) {
-            // 모바일: 가로 스크롤 감지
+            // モバイル: 横スクロールを検出
             const scrollLeft = topicsPanel.scrollLeft;
             const panelWidth = topicsPanel.offsetWidth;
-            
-            // 현재 스크롤 위치를 기반으로 카드 인덱스 계산
+
+            // 現在のスクロール位置を基にカードインデックスを計算
             clampedIndex = Math.round(scrollLeft / panelWidth);
             clampedIndex = Math.max(0, Math.min(clampedIndex, researchTopics.length - 1));
             
@@ -87,7 +87,7 @@
                 clampedIndex
             });
         } else {
-            // 데스크톱: 세로 스크롤
+            // デスクトップ: 縦スクロールを検出
             const scrollTop = topicsPanel.scrollTop;
             const panelHeight = topicsPanel.offsetHeight;
             const currentIndex = Math.round(scrollTop / panelHeight);
@@ -99,13 +99,13 @@
                 clampedIndex
             });
         }
-        
-        // WiFi 이미지 변경 (index 0 = wifi3, 1 = wifi2, 2 = wifi1)
+
+        // WiFi イメージ変更 (index 0 = wifi3, 1 = wifi2, 2 = wifi1)
         const wifiLevel = 3 - clampedIndex;
         
         switchWifiImage(wifiLevel);
-        
-        // 모든 카드의 active 클래스 제거 후 현재 카드만 active
+
+        // すべてのカードのactiveクラスを削除し、現在のカードのみactiveにする
         researchTopics.forEach((topic, i) => {
             if (i === clampedIndex) {
                 topic.classList.add('active');
@@ -114,36 +114,36 @@
             }
         });
 
-        // 모바일 슬라이드 인디케이터 업데이트
+        // モバイルスライドインジケーターを更新
         if (isMobile) {
             updateSlideIndicators(clampedIndex);
         }
     }
 
     /**
-     * 시그널 도트 클릭 이벤트
+     * シグナルドットクリックイベント
      */
     function setupSignalDots() {
         signalDots.forEach(dot => {
             dot.addEventListener('click', function() {
                 const signalLevel = parseInt(this.dataset.signal);
                 switchWifiImage(signalLevel);
-                
-                // 해당 연구 테마로 스크롤 (패널 내부에서)
+
+                // 該当する研究テーマにスクロール (パネル内部で)
                 const topicIndex = 3 - signalLevel; // wifi3=topic0, wifi2=topic1, wifi1=topic2
                 if (researchTopics[topicIndex] && topicsPanel) {
                     const isMobile = window.innerWidth <= 1024;
                     const topic = researchTopics[topicIndex];
                     
                     if (isMobile) {
-                        // 모바일: 가로 스크롤
+                        // モバイル: 横スクロールを検出
                         const topicLeft = topic.offsetLeft;
                         topicsPanel.scrollTo({
                             left: topicLeft,
                             behavior: 'smooth'
                         });
                     } else {
-                        // 데스크톱: 세로 스크롤
+                        // デスクトップ: 縦スクロールを検出
                         const topicTop = topic.offsetTop;
                         const panelHeight = topicsPanel.offsetHeight;
                         const topicHeight = topic.offsetHeight;
@@ -159,19 +159,19 @@
     }
 
     /**
-     * 모바일 슬라이드 인디케이터 생성
+     * モバイル用スライドインジケーターの作成
      */
     function createSlideIndicators() {
         const isMobile = window.innerWidth <= 1024;
         if (!isMobile) return;
 
-        // 기존 인디케이터 제거
+        // 既存のインジケーターを削除
         const existingIndicator = document.querySelector('.mobile-slide-indicators');
         if (existingIndicator) {
             existingIndicator.remove();
         }
 
-        // 새 인디케이터 컨테이너 생성
+        // 新しいインジケーターコンテナを作成
         const indicatorContainer = document.createElement('div');
         indicatorContainer.className = 'mobile-slide-indicators';
         indicatorContainer.style.cssText = `
@@ -185,7 +185,7 @@
             padding: 10px;
         `;
 
-        // 각 카드에 대한 도트 생성
+        // 各カードに対するドットを生成
         researchTopics.forEach((_, index) => {
             const dot = document.createElement('div');
             dot.className = 'slide-indicator-dot';
@@ -205,7 +205,7 @@
                 dot.style.borderRadius = '4px';
             }
 
-            // 도트 클릭 이벤트
+            // ドットクリックイベント
             dot.addEventListener('click', function() {
                 const targetIndex = parseInt(this.dataset.index);
                 if (researchTopics[targetIndex]) {
@@ -228,7 +228,7 @@
     }
 
     /**
-     * 슬라이드 인디케이터 업데이트
+     * スライドインジケーターを更新
      */
     function updateSlideIndicators(activeIndex) {
         const dots = document.querySelectorAll('.slide-indicator-dot');
@@ -246,12 +246,12 @@
     }
 
     /**
-     * 초기화
+     * 初期化
      */
     function init() {
         console.log('=== Research Scroll Init ===');
         
-        // DOM 요소 다시 가져오기
+        // DOM 要素の取得
         wifiImages = document.querySelectorAll('.wifi-image-stack .wifi-image');
         signalDots = document.querySelectorAll('.signal-dot');
         researchTopics = document.querySelectorAll('.research-topic-item');
@@ -279,24 +279,24 @@
 
         console.log('✅ All elements found, initializing...');
 
-        // 초기 상태 설정
+        // 初期状態の設定
         switchWifiImage(3);
         if (researchTopics.length > 0) {
             researchTopics[0].classList.add('active');
         }
-        
-        // 시그널 도트 설정
+
+        // シグナルドット設定
         setupSignalDots();
 
-        // 모바일 슬라이드 인디케이터 생성
+        // モバイル用スライドインジケーターの作成
         createSlideIndicators();
 
-        // 오른쪽 패널의 스크롤 이벤트 리스너 (throttle 적용)
+        // 右側パネルのスクロールイベントリスナー (throttle適用)
         let ticking = false;
         let lastScrollTime = 0;
         topicsPanel.addEventListener('scroll', function() {
             const now = Date.now();
-            // 너무 자주 실행되지 않도록 throttle (60fps = 16ms)
+            // あまりにも頻繁に実行されないようにthrottle (60fps = 16ms)
             if (now - lastScrollTime < 16) return;
             lastScrollTime = now;
             
@@ -308,26 +308,26 @@
                 });
                 ticking = true;
             }
-        }, { passive: true }); // passive 옵션으로 성능 개선
+        }, { passive: true }); // passive でパフォーマンス向上
 
         console.log('✅ Scroll listener attached');
-        
-        // 패널이 초기화되었음을 표시
+
+        // パネルが初期化されたことを示す
         topicsPanel.dataset.initialized = 'true';
 
-        // 초기 스크롤 위치 체크
+        // 初期スクロール位置チェック
         setTimeout(function() {
             console.log('⏰ Initial scroll check');
             handlePanelScroll();
         }, 100);
 
-        // 모바일에서는 초기 스크롤 동작 개선
+        // モバイル対応
         if (window.innerWidth <= 1024) {
-            // 모바일에서는 첫 번째 카드를 활성화
+            // モバイルでは最初のカードを活性化
             if (researchTopics.length > 0) {
                 researchTopics[0].classList.add('active');
             }
-            // 터치 이벤트도 처리
+            // タッチイベントも処理
             topicsPanel.addEventListener('touchmove', function() {
                 if (!ticking) {
                     window.requestAnimationFrame(function() {
@@ -343,7 +343,7 @@
     }
 
     /**
-     * 윈도우 리사이즈 핸들러
+     * ウィンドウリサイズハンドラー
      */
     let resizeTimeout;
     window.addEventListener('resize', function() {
@@ -351,13 +351,13 @@
         resizeTimeout = setTimeout(function() {
             if (topicsPanel) {
                 handlePanelScroll();
-                // 리사이즈 시 인디케이터 재생성
+                // リサイズ時にインジケーターを再生成
                 createSlideIndicators();
             }
         }, 150);
     });
 
-    // DOM 로드 후 초기화
+    // DOM ロード後初期化
     function tryInit() {
         console.log('🚀 Trying to initialize... (readyState: ' + document.readyState + ')');
         const success = init();
@@ -366,16 +366,16 @@
         }
         return success;
     }
-    
-    // 여러 시점에서 초기화 시도
+
+    // さまざまなタイミングで初期化を試みる
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', tryInit);
     } else {
-        // 문서가 이미 로드 중이거나 완료된 경우
+        // ドキュメントがすでに読み込まれているか、完了している場合
         setTimeout(tryInit, 0);
     }
-    
-    // 추가 안전장치: window.load 시에도 재시도
+
+    // 追加の安全装置: window.load 時にも再試行
     window.addEventListener('load', function() {
         console.log('🔄 Window loaded, checking initialization...');
         const panel = document.querySelector('.research-topics-panel');

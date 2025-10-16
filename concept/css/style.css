@@ -10,7 +10,7 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #2a3650 100%);
-  display: none; /* 기본적으로 숨김 */
+  display: none; /* デフォルトで非表示 */
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -31,7 +31,7 @@
   visibility: hidden;
 }
 
-/* 네트워크 파티클 배경 */
+/* ネットワークパーティクル背景 */
 .loading-particles {
   position: absolute;
   width: 100%;
@@ -56,7 +56,7 @@
   100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
 }
 
-/* 로고 컨테이너 */
+/* ロゴコンテナ */
 .loading-content {
   position: relative;
   z-index: 2;
@@ -76,7 +76,7 @@
   50% { transform: translateY(-10px); }
 }
 
-/* WiFi 신호 애니메이션 */
+/* WiFi信号アニメーション */
 .wifi-signal {
   position: relative;
   width: 100px;
@@ -143,7 +143,7 @@
   }
 }
 
-/* WiFi 중앙점 */
+/* WiFi　センター */
 .wifi-center {
   position: absolute;
   width: 12px;
@@ -161,7 +161,7 @@
   50% { transform: scale(1.3); box-shadow: 0 0 30px rgba(30, 144, 255, 1); }
 }
 
-/* 로딩 텍스트 */
+/* ローディングテキスト */
 .loading-title {
   font-family: 'Open Sans', sans-serif;
   font-size: 48px;
@@ -186,7 +186,7 @@
   letter-spacing: 2px;
 }
 
-/* 로딩 바 */
+/* ローディングバー */
 .loading-bar-container {
   width: 300px;
   height: 4px;
@@ -213,7 +213,7 @@
   100% { background-position: 200% 50%; }
 }
 
-/* 로딩 퍼센트 */
+/* ローディングパーセント */
 .loading-percent {
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
@@ -224,7 +224,7 @@
   transition: all 0.3s ease-out;
 }
 
-/* 로딩 상태 텍스트 */
+/* ローディング状態テキスト */
 .loading-status {
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
@@ -234,7 +234,7 @@
   transition: all 0.3s ease-out;
 }
 
-/* 모바일 대응 */
+/* モバイル対応 */
 @media screen and (max-width: 768px) {
   .loading-logo {
     width: 80px;
@@ -549,14 +549,14 @@ h1, h2, h3, h4, h5, h6, figure {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: url(../images/back.png); /* 폴백 배경 이미지 */
+  background-image: url(../images/back.png); /* フォールバック背景画像 */
   position: relative;
   float: left;
   width: 100%;
-  overflow: hidden; /* 동영상이 넘치지 않도록 */
+  overflow: hidden; /* 動画がはみ出さないように */
 }
 
-/* GIF/이미지 배경 스타일 (비디오를 GIF로 교체) */
+/* GIF/画像背景スタイル (ビデオをGIFに置き換える) */
 .background-gif,
 #background-video,
 #research-background-video,
@@ -2433,7 +2433,7 @@ canvas#achievement-donut-chart {
 
 .js .animate-box {
   opacity: 0;
-  /* 애니메이션 성능 최적화 */
+  /* アニメーションパフォーマンス最適化 */
   will-change: transform, opacity;
   transform: translateZ(0);
   -webkit-backface-visibility: hidden;
@@ -2457,7 +2457,6 @@ canvas#achievement-donut-chart {
   overflow: hidden;
 }
 
-/* #research-background-video 스타일은 위의 .background-gif로 통합됨 */
 
 .video-background .overlay {
   z-index: 0;
@@ -2714,7 +2713,7 @@ canvas#achievement-donut-chart {
   padding: 0px 60px;
   margin-bottom: 0px;
   z-index: 2;
-  /* 애니메이션 성능 최적화 */
+  /* アニメーション性能最適化 */
   will-change: transform, opacity;
   transform: translateZ(0);
   -webkit-backface-visibility: hidden;
@@ -3182,7 +3181,7 @@ canvas#achievement-donut-chart {
 
 /* ========== NEW MODERN RESEARCH THEME STYLES ========== */
 
-/* レイアウトラッパー - 2분할 레이아웃 */
+/* レイアウトラッパー - 2分割レイアウト */
 .research-content-wrapper {
   display: flex;
   align-items: stretch;
@@ -3200,7 +3199,7 @@ canvas#achievement-donut-chart {
   overflow: hidden;
 }
 
-/* WiFi ビジュアライゼーションパネル - 왼쪽 고정 */
+/* WiFi ビジュアライゼーションパネル - 左側固定 */
 .wifi-visualization-panel {
   position: relative;
   width: 32%;
@@ -3230,7 +3229,7 @@ canvas#achievement-donut-chart {
   50% { opacity: 0.8; transform: scale(1.1); }
 }
 
-/* WiFi 画像スタック - PC 기본값 */
+/* WiFi 画像スタック - PC 基本値 */
 .wifi-image-stack {
   position: relative;
   width: 280px;
@@ -3285,7 +3284,7 @@ canvas#achievement-donut-chart {
   transform: scale(1.3);
 }
 
-/* 研究トピックスパネル - 오른쪽 스크롤 영역 */
+/* 研究トピックスパネル - 右側スクロール領域 */
 .research-topics-panel {
   flex: 1;
   display: flex;
@@ -3303,7 +3302,7 @@ canvas#achievement-donut-chart {
   margin: 0;
 }
 
-/* 스크롤바 스타일링 */
+/* スクロールバースタイリング */
 .research-topics-panel::-webkit-scrollbar {
   width: 8px;
 }
@@ -3323,7 +3322,7 @@ canvas#achievement-donut-chart {
   background: rgba(30, 144, 255, 0.8);
 }
 
-/* 研究トピックアイテム - 스냅 스크롤 */
+/* 研究トピックアイテム - スナップスクロール */
 .research-topic-item {
   opacity: 0.7;
   transform: scale(0.97) translateZ(0);
@@ -3588,7 +3587,7 @@ canvas#achievement-donut-chart {
     box-shadow: none;
   }
 
-  /* 모바일 WiFi 영역 - 태블릿/모바일 (≤992px) */
+  /* WiFi ビジュアライゼーションパネル */
   .wifi-visualization-panel {
     width: 100%;
     min-width: auto;
@@ -3597,7 +3596,7 @@ canvas#achievement-donut-chart {
     min-height: auto;
   }
 
-  /* 모바일 WiFi 이미지 크기 - 태블릿/모바일 (≤992px) */
+  /* WiFi 画像スタック */
   .wifi-image-stack {
     width: 180px;
     height: 180px;
@@ -3615,7 +3614,7 @@ canvas#achievement-donut-chart {
     margin-top: 15px;
   }
 
-  /* 모바일: 가로 스크롤 슬라이드 */
+  /* WiFi ビジュアライゼーションパネル */
   .research-topics-panel {
     width: 100%;
     height: auto;
@@ -3679,7 +3678,7 @@ canvas#achievement-donut-chart {
     scrollbar-width: none;
   }
 
-  /* 슬라이드 인디케이터 숨기기 (모바일) */
+  /* スライドインジケーターを非表示にする (モバイル) */
   .mobile-slide-indicators {
     display: none !important;
   }
@@ -3712,7 +3711,7 @@ canvas#achievement-donut-chart {
     margin-bottom: 0;
   }
 
-  /* 모바일 WiFi 영역 - 스마트폰 (≤768px) */
+  /* モバイル WiFi エリア - スマートフォン (≤768px) */
   .wifi-visualization-panel {
     height: 160px;
     padding: 15px;
@@ -3720,7 +3719,7 @@ canvas#achievement-donut-chart {
     margin-top: 15px;
   }
 
-  /* 모바일 WiFi 이미지 크기 - 스마트폰 (≤768px) */
+  /* モバイル WiFi 画像サイズ - スマートフォン (≤768px) */
   .wifi-image-stack {
     width: 140px;
     height: 140px;
@@ -3770,7 +3769,7 @@ canvas#achievement-donut-chart {
     font-size: 1rem;
   }
 
-  /* 가로 스크롤 최적화 */
+  /* WiFi ビジュアライゼーションパネル */
   .research-topics-panel {
     padding: 12px 0 3px 0;
   }
@@ -3840,8 +3839,8 @@ canvas#achievement-donut-chart {
   .research-topics-panel {
     padding: 10px 0 2px 0;
   }
-  
-  /* 모바일 WiFi 이미지 크기 - 작은 스마트폰 (≤480px) */
+
+  /* モバイル WiFi 画像サイズ - 小さなスマートフォン (≤480px) */
   .wifi-image-stack {
     width: 110px;
     height: 110px;
@@ -3857,7 +3856,7 @@ canvas#achievement-donut-chart {
   }
 }
 
-  /* 가로 스크롤 작은 화면 최적화 */
+  /* 横スクロール小画面最適化 */
   .research-topics-panel {
     padding: 10px 0 30px 0;
   }
@@ -4055,13 +4054,13 @@ html {
   scroll-behavior: smooth; /* スムーズスクロール */
 }
 
-/* 전역 성능 최적화 */
+/* フォントスムージング */
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* GPU 가속 활성화 */
+/* GPU アクセラレーションを有効にする */
 .research-topics-panel,
 .wifi-visualization-panel,
 .timeline-container {
@@ -4070,15 +4069,15 @@ html {
   backface-visibility: hidden;
 }
 
-/* 모든 비디오 요소에 대한 모바일 최적화 */
+/* すべてのビデオ要素に対するモバイル最適化 */
 video {
-  /* 모바일에서 인라인 재생 (전체화면 방지) */
+  /* モバイルでインライン再生 (全画面防止) */
   -webkit-playsinline: true;
-  /* 컨트롤 숨기기 */
+  /* コントロールを隠す */
   pointer-events: none;
 }
 
-/* 모바일 비디오 컨트롤 완전히 숨기기 */
+/* モバイルビデオコントロールを完全に隠す */
 video::-webkit-media-controls {
   display: none !important;
 }
@@ -5245,7 +5244,6 @@ video::-webkit-media-controls-start-playback-button {
   min-height: 100px; /* 最小高さを確保 */
 }
 
-/* 중복된 오래된 wrapper 스타일들 제거됨 - 통합 스타일 사용 */
 
 /* ヘッダー動画のレスポンシブ対応 */
 @media screen and (max-width: 768px) {
